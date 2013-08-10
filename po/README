@@ -1,0 +1,36 @@
+Update existing language
+------------------------
+
+You can check if language is suported by listing .po and .gmo files
+in this directory. If you want to update the file, do following:
+
+1) "make update-po"
+2) edit <lang>.po and update translations
+3) "make update-gmo"
+
+now it is ready to installation as usualy.
+
+Add new language
+----------------
+
+1) "make update-po"
+2) "cp pinger.pot <your language>.po"
+3) edit <your language>.po and update translations and fill the header!
+4) edit ../configure.in and add <your language> here:
+
+ALL_LINGUAS="cs <here>"
+
+or just at the end of the list.
+
+5) cd .. && ./autogen.sh
+6) ./configure <with all parameters you want> - this recreates makefiles
+7) cd po && make update-gmo
+
+ready for installation!
+
+
+Note: <your language> is made of several characters in format xx or xx_yy.
+(Examples: cs, zh_HK). Available languages are listed by this command:
+
+localedef --list-archive
+

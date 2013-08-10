@@ -1,0 +1,11 @@
+#!/bin/sh
+	if [ `id | cut -c7-10` != "root" ]; then 
+		echo -e "\nRoot privileges are NECCESSARY during installation !!!\n"; exit 1; 
+	fi
+	if [ ! -d PINGERBINDIR ]; then
+		echo "Problem adding SUID to the pinger. Cannot found it's bin directory"
+		exit 1;
+	fi
+	chmod u+s PINGERBINDIR/pinger
+# End automatically added section
+

@@ -1,0 +1,62 @@
+.TH PINGER 1 "2002 - 2006"
+.SH NAME
+pinger \- GTK+/ncurses multi-ping utility
+.SH SYNOPSIS
+.B pinger [options] [config file 1] [config file 2] ...
+.SH DESCRIPTION
+.B pinger
+is a graphical (GTK+ version 2.x) and text mode (ncurses) multi host network
+state monitor using ICMP echo request/reply technique (ping).
+.P
+Like original ping this program also needs root privileges which is done during installation using setuid attribute on pinger executable. It is necessary then to have root privileges during installation process.
+
+.TP
+\f3--quiet\f1
+Quiet mode. Do not write messages in the console except error ones.
+
+.TP
+\f3--gtk\f1
+Use GTK mode (graphical). Requires pinger compiled with GTK support.
+You can use
+.B gtkpinger
+which is shortcut to
+.B pinger --gtk
+
+.P
+For more details about configuring pinger see README file included in pinger distribution package.
+.P
+Quit is done by pressing of any key.
+.
+
+.SH FILES
+.TP
+.IP "~/.pingerrc"
+Configuration file (edit it manually to add/change monitored hosts and timing
+parameters) created automatically if not found.
+.P
+You can write your own configuration file and name it as you wish. Then use it as argument for pinger. You can use multiple configuration files at once a switch between them when pinger is running using PgDn and PgUp. Hosts from multiple configuration files are pinged in parallel all the time, not only hosts from the current set displayed on your screen.
+
+.SH BUGS
+See BUGS file included in pinger distribution package.
+
+.SH LICENSE
+.B pinger
+is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+.SH AUTHOR
+.I pinger
+was written by 
+.B Petr Koloros.
+See file 
+.I AUTHORS
+for a list of people contributing to this project.
+.P
+The homepage of pinger can be found at
+.BI http://aa.vslib.cz/silk/projects/pinger/index.php
+
+.SH "SEE ALSO"
+.BR ping (1),
+.BR fping (1)

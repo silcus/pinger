@@ -1,0 +1,14 @@
+Package: pinger
+Priority: optional
+Section: net
+Installed-Size: 408
+Maintainer: Petr Koloros <silk@sinus.cz>
+Architecture: i386
+Version: 0.32-1
+Depends: libatk1.0-0 (>= 1.6.0), libc6 (>= 2.3.2), libglib2.0-0 (>= 2.4.7), libgtk2.0-0 (>= 2.4.3), libncurses5 (>= 5.4-1), libpango1.0-0 (>= 1.4.0)
+Description: A cyclic multi-ping utility for selected adresses using GTK/ncurses.  
+ You simply write addresses into a configuration file and run pinger. You'll get
+ a small nice window or table in the text terminal, which informs you about
+ current status of the selected hosts. their triptimes, last good status, etc. It is
+ capable of configurable logs of what happened to the host during all the time
+ the pinger is runing.

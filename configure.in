@@ -1,0 +1,108 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(src/pinger.c)
+AM_INIT_AUTOMAKE(pinger, 0.32e)
+AM_CONFIG_HEADER(config.h)
+
+dnl Checks for programs.
+AC_PROG_CC
+
+dnl stdlib stdio 
+
+AC_CHECK_HEADERS(arpa/inet.h netinet/in.h  stdarg.h string.h \
+  sys/socket.h sys/time.h unistd.h netdb.h pthread.h netinet/ip_icmp.h \
+  netinet/ip.h sys/stat.h signal.h pthread.h asm/types.h errno.h features.h \
+  stdlib.h stdio.h stdio.h sys/ioctl.h sys/time.h time.h unistd.h, ,
+  AC_MSG_ERROR(Cannot find all required headers))
+
+echo "--- checking if ARP pinging is possible ---"
+l2_proto=1
+AC_CHECK_HEADERS(linux/if_arp.h, , l2_proto=0, [[#include <sys/socket.h>]])
+AC_CHECK_HEADERS(netpacket/packet.h net/ethernet.h \
+asm/types.h linux/if_packet.h linux/if_ether.h,,l2_proto=0 )
+AM_CONDITIONAL(ENABLE_ARP, test $l2_proto = 1)
+if test $l2_proto = 1; then
+  AC_DEFINE([ENABLE_ARP], 1, [If arp pinging is enabled in the code.])
+  arp_res="enabled"
+else
+  AC_WARN(ARP not possible, some of required headers are missing or system is not linux-like.)
+  arp_res="disabled"
+fi
+echo "-- ARP testing done, result: ARP $arp_res"
+
+dnl Multilanguage support
+AC_CHECK_HEADERS(libintl.h locale.h, , )
+
+datadir_n=`(
+    test "x$prefix" = xNONE && prefix=$ac_default_prefix
+    test "x$exec_prefix" = xNONE && exec_prefix=${prefix}
+    eval echo "$datadir"
+)`
+datadir=$datadir_n
+
+ALL_LINGUAS="cs pl"
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION(0.14.5)
+
+LOCALEDIR=${datadir}/locale
+AC_DEFINE_UNQUOTED(LOCALEDIR, "$LOCALEDIR", "Where locales are installed")
+AC_SUBST(LOCALEDIR)
+
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+AC_HEADER_TIME
+AM_INADDRT
+
+AC_ARG_ENABLE(gtk, [  --enable-gtk            enable GTK+ support],
+              [if test "$enableval" = no; then no_gtk=yes; fi])
+AC_MSG_CHECKING([for GTK+ support])
+AC_MSG_RESULT($enableval)
+dnl Check for additional external libraries etc..
+if test x$no_gtk != xyes; then
+AM_PATH_GTK_2_0(2.0.0, CFLAGS="$CFLAGS $GTK_CFLAGS"
+					 LIBS="$LIBS $GTK_LIBS"; HAVE_GTK_2=1;
+					 AC_DEFINE([HAVE_GTK_2], 1, Found GTK 2),
+           HAVE_GTK_2=0)
+fi
+AC_CHECK_LIB(ncurses, initscr, HAVE_CURSES=1; LIBS="$LIBS -lncurses";
+	AC_DEFINE([HAVE_LIBNCURSES], [1], found ncurses library))
+AC_CHECK_LIB(intl, libintl_gettext, LIBS="$LIBS -lintl")
+AC_CHECK_LIB(pthread, pthread_create, LIBS="$LIBS -lpthread", AC_MSG_ERROR(Pthread required and not found. Please check if you have libpthread in your system and specify using CFLAGS and LDFLAGS when configure))
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(gettimeofday inet_ntoa memset socket strchr strerror setresuid, ,
+	AC_MSG_ERROR(Cannot find all required library functions))
+
+AM_CONDITIONAL(HAVE_CURSES, test x$HAVE_CURSES == x1)
+AM_CONDITIONAL(HAVE_GTK_2, test x$HAVE_GTK_2 == x1)
+
+AC_OUTPUT(Makefile src/Makefile m4/Makefile po/Makefile.in)
+
+if test "x$HAVE_CURSES$HAVE_GTK_2" = "x"; then
+	AC_MSG_ERROR(No display mode available. You must have at least one of possible libraries (gtk, ncurses).)
+fi
+
+
+
+echo ""
+echo "Available modes:"
+if test "x$HAVE_GTK_2" = "x1"; then
+	echo -e "  GTK 2.x:\tYES";
+else
+	echo -e "  GTK 2.x:\tNO";
+fi
+if test "x$HAVE_CURSES" = "x1"; then
+	echo -e "  ncurses:\tYES";
+else
+	echo -e "  ncurses:\tNO";
+fi
+
+echo
+if test $l2_proto = 1; then
+  echo -e "ARP pinging enabled";
+else
+  echo -e "ARP pinging disabled";
+fi
+
+echo -e "\nNow type 'make' and 'make install'. Root privileges required for installing!!! \n"

@@ -1,0 +1,729 @@
+# Pinger language set for Czech
+# This file is put in the public domain.
+# Petr Koloros <silk@sinus.cz>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pinger 0.31 \n"
+"Report-Msgid-Bugs-To: silk@sinus.cz\n"
+"POT-Creation-Date: 2008-01-31 02:05+0100\n"
+"PO-Revision-Date: 2008-01-17 00:35+0100\n"
+"Last-Translator: Petr Koloros <silk@sinus.cz>\n"
+"Language-Team: none <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/parse.c:35
+msgid "Incomplete line"
+msgstr "Nekompletní øádka"
+
+#: src/parse.c:236
+msgid "Value is lower than limit. Setting to minimum value."
+msgstr "Hodnota je men¹í, ne¾ limit. Nastavuji na nejmen¹í hodnotu."
+
+#: src/parse.c:240
+msgid "Value is higher than limit. Setting to maximum value."
+msgstr "Hodnota je vìt¹í, ne¾ limit. Nastavuji na nejvìt¹í hodnotu."
+
+#: src/parse.c:314
+msgid "Cannot get environment variable"
+msgstr "Nemohu naèíst promìnou prostøedí"
+
+#: src/parse.c:331
+msgid "Reading configuration file"
+msgstr "Ètu konfiguraèní soubor"
+
+#: src/parse.c:336
+msgid "Cannot open config file"
+msgstr "Nemohu otevøít konfiguraèní soubor"
+
+#: src/parse.c:343
+msgid "Creating new one in your home directory ..."
+msgstr "Vytváøím nový ve va¹em domácím adresáøi ..."
+
+#: src/parse.c:346
+msgid "Cannot create file"
+msgstr "Nemohu otevøít konfiguraèní soubor"
+
+#: src/parse.c:346
+msgid "Please check your create privileges for this directory!"
+msgstr "Prosím zkontrolujte si práva k tomuto adresáøi!"
+
+#: src/parse.c:349
+msgid "Pinger configuration file"
+msgstr "Konfiguraèní soubor Pingeru"
+
+#: src/parse.c:350
+msgid "Description"
+msgstr "Popis"
+
+#: src/parse.c:351
+msgid "when ping successful, wait this time before sending next ping request."
+msgstr ""
+"pokud je ping úspì¹ný, èeká se takto dlouho pøed vysláním dal¹ího pingu."
+
+#: src/parse.c:352
+msgid "when ping failed, wait this time before sending next ping request."
+msgstr ""
+"pokud je ping neúspì¹ný, èeká se takto dlouho pøed vysláním dal¹ího pingu."
+
+#: src/parse.c:353
+msgid "Also when reply exceeds this interval, host is marked as offline."
+msgstr ""
+"Pokud odpovìd nepøíjde do tohoto intervalu, poèítaè je oznaèen jako 'bez "
+"odpovìdi'."
+
+#: src/parse.c:354
+msgid "delay of reply after which is host marked as delayed."
+msgstr "zpo¾dìní, po kterém je poèítaè oznaèen jako opo¾dìný."
+
+#: src/parse.c:355
+msgid ""
+"Indicate that host will be pinged using ARP request instead of ICMP ECHO."
+msgstr ""
+"Znamená, ¾e stav poèítaèe bude zji¹»ován pomocí ARP po¾adavku místo "
+"klasického ICMP ECHO."
+
+#: src/parse.c:356
+msgid "Indicate that host will be logged in the host log."
+msgstr "Znamená, ¾e zmìna stavu poèítaèe bude zapsána do ¾urnálu host log."
+
+#: src/parse.c:357
+msgid "Indicate that host will not be logged in the host log."
+msgstr "Znamená, ¾e zmìna stavu poèítaèe bude zapsána do ¾urnálu host log."
+
+#: src/parse.c:358
+msgid "Logging - if host log specified, every hosts is logged."
+msgstr ""
+"Logování - pokud je definován ¾urnál host log, zmìna ka¾dého poèítaèe bude "
+"zapsána."
+
+#: src/parse.c:359
+msgid "If any of them is marked as nolog, it won't be logged."
+msgstr "Pokud je jakýkoliv z nich oznaèen nolog, nebude jeho zmìna zapsána."
+
+#: src/parse.c:360
+msgid "If there are only 'log' at some hosts, these will be logged"
+msgstr "Pokud je zde jen 'log' u nìkterých poèítaèù, bude jeich stav zapsán,"
+
+#: src/parse.c:361
+msgid "while the rest won't. See README for more."
+msgstr "zatímco u zbytku nikoliv. V README najde¹ více informací."
+
+#: src/parse.c:364
+msgid "Display refresh interval."
+msgstr "Interval obnovení údajù na displeji."
+
+#: src/parse.c:366
+msgid "Successful pings' next request interval."
+msgstr "Interval dal¹ího po¾adavku pøi úspì¹ném pingu."
+
+#: src/parse.c:368
+msgid "Interval, in which if there is no reply,"
+msgstr "Pokud v tomto intervalu nepøíjde odpovìd,"
+
+#: src/parse.c:369
+msgid "host is marked as offline and new request is sent."
+msgstr ""
+"poèítaè je oznaèen stavem 'bez odpovìdi' a ihned je vyslán dal¹í po¾adavek."
+
+#: src/parse.c:371
+msgid ""
+"Delay of reply after which is host marked as delayed, if not specified in IP "
+"line."
+msgstr ""
+"Zpo¾dìní, po kterém je poèítaè oznaèen jako opo¾dìný, pokud není "
+"specifikováno jinak u IP."
+
+#: src/parse.c:373
+msgid "Hosts specified only by domain names are resolved every 10 minutes."
+msgstr ""
+"Poèítaèe specifikovány pouze doménovým jménem jsou pøekládány ka¾dých 10 "
+"minut. "
+
+#: src/parse.c:374
+msgid "Specify other interval in seconds here if required. -1 = disable."
+msgstr ""
+"Specifikuj jiný interval v sekundách zde, pokud potøebuje¹. -1 = vypnuto."
+
+#: src/parse.c:376
+msgid "Filename where to log errors."
+msgstr "Soubor, kam zapisovat chyby."
+
+#: src/parse.c:378
+msgid "Filename where to log host status changes."
+msgstr "Soubor, kam zapisovat zmìnu stavu poèítaèù."
+
+#: src/parse.c:380
+msgid "Minimum duration of the host status to log the change (in seconds)."
+msgstr ""
+"Minimální trvání stavu poèítaèe k tomu, aby se zmìna objevila v logu (v "
+"sekundách)."
+
+#: src/parse.c:381
+msgid "-1 = disable logging, 0 = log all changes."
+msgstr "-1 = vypne zapisování zmìn, 0 = zapisuj v¹echny zmìny."
+
+#: src/parse.c:383
+msgid "ICMP packet size (see 'man ping' for details)."
+msgstr "Velikost ICMP paketu (více v 'man ping')."
+
+# c-format
+#: src/parse.c:385
+msgid "Title of this set of hosts. Character"
+msgstr "Jméno této sady poèítaèù. Znak"
+
+#: src/parse.c:385
+msgid "is not allowed here!"
+msgstr "zde není povolen!"
+
+#: src/parse.c:395
+msgid "Cannot set configuration file owner to current user:"
+msgstr ""
+"Nemohu nastavit vlastníka konfiguraèního souboru na aktuálního u¾ivatele:"
+
+#: src/parse.c:398
+msgid "Cannot reopen just created config file!"
+msgstr "Nemohu otevøít právì otevøený konfiguraèní soubor!"
+
+#: src/parse.c:401
+msgid "Config file created successfuly"
+msgstr "Konfiguraèní soubor úspì¹nì vytvoøen"
+
+#: src/parse.c:403
+msgid "Using file"
+msgstr "Pou¾ívám soubor"
+
+#: src/parse.c:423
+msgid "found options section"
+msgstr "nalezena sekce 'options'"
+
+#: src/parse.c:426
+msgid "found hosts section"
+msgstr "nalezena sekce 'poèítaèe'"
+
+#: src/parse.c:430
+msgid "Something uncommented found before OPTIONS section!"
+msgstr "Nìco nedokumentovaného nalezeno pøed sekcí OPTIONS!"
+
+#: src/parse.c:443
+msgid "IP/domain name"
+msgstr "IP/doménové jméno"
+
+#: src/parse.c:446
+msgid "Invalid IP/domain name"
+msgstr "Neplatné IP/doménové jméno"
+
+#: src/parse.c:450
+msgid ""
+"Domain name is too long! Update this program source or check if domain name "
+"is OK!"
+msgstr ""
+"Doména je pøíli¹ dlouhá! Zmìn to ve zdrojovém kódu nebo si ovìø, zda je "
+"doména OK!"
+
+#: src/parse.c:478
+msgid "is already initialized."
+msgstr "je ji¾ inicializován"
+
+#: src/parse.c:504
+msgid "Invalid host"
+msgstr "Neplatný poèítaè"
+
+#: src/parse.c:516
+msgid "Found name"
+msgstr "Nalezeno jméno"
+
+#: src/parse.c:519
+msgid "Setting ok delay"
+msgstr "Nastavuji prodlevu pro stav 'ok'"
+
+#: src/parse.c:523
+msgid "Setting noreply delay"
+msgstr "Nastavuji prodlevu pro stav 'bez odpovìdi'"
+
+#: src/parse.c:527
+msgid "Setting long delay"
+msgstr "Nastavuji interval vìt¹ího zpo¾dìní novou hodnotu"
+
+#: src/parse.c:531
+msgid "This host will use ARP request instead of ICMP ECHO"
+msgstr "Tento poèítaè bude pou¾ívat ARP po¾adavky místo klasických ICMP ECHO"
+
+#: src/parse.c:536
+msgid "This host will not be logged in host log"
+msgstr "Zmìny tohoto poèítaèe nebudou zapisovány v ¾urnálu host log"
+
+#: src/parse.c:539
+msgid "This host will be logged in host log"
+msgstr "Zmìny tohoto poèítaèe budou zapisovány v ¾urnálu host log"
+
+#: src/parse.c:545
+msgid "Adding host"
+msgstr "Pøidávám poèítaè"
+
+#: src/parse.c:587
+msgid "Initializing socket"
+msgstr "Inicializuji socket"
+
+#: src/parse.c:587
+msgid "Make sure you have root privileges or suid bit set!"
+msgstr "Ujistìte se, ¾e máte rootovská práva nebo nastaven suid bit!"
+
+#: src/parse.c:592
+msgid "Got free socket less than 2!"
+msgstr "Nalezen volný socket men¹í ne¾ 2!"
+
+#: src/parse.c:600
+msgid "Name"
+msgstr "Jméno"
+
+#: src/parse.c:600
+msgid "value"
+msgstr "hodnota"
+
+#: src/parse.c:610
+msgid "Setting dns check to new value"
+msgstr "Nastavuji interval dns kontroly na novou hodnotu"
+
+#: src/parse.c:612 src/parse.c:617 src/parse.c:629
+msgid "is out of range"
+msgstr "je mimo rozsah"
+
+#: src/parse.c:613 src/parse.c:618 src/parse.c:630
+msgid "Setting default value of"
+msgstr "Nastavuji pùvodní hodnotu"
+
+#: src/parse.c:622
+msgid "Setting logging to log every host status change"
+msgstr "Nastavuji zapisování zmìn stavu pro ka¾dý poèátaè"
+
+#: src/parse.c:624
+msgid "Disabling host status logging"
+msgstr "Vypínám zapisování stavu poèítaèe"
+
+#: src/parse.c:626
+msgid "Setting logging when host status last longer than value of (seconds)"
+msgstr ""
+"Nastavuji zapisování zmìn, pokud stav poèítaèe potrvá déle ne¾ hodnota (v "
+"sekundách)"
+
+#: src/parse.c:633
+msgid "Setting ICMP packet size to value"
+msgstr "Nastavuji velikost ICMP paketu na"
+
+#: src/parse.c:637
+msgid "Value -1 is not allowed here"
+msgstr "Hodnota -1 zde není povolena"
+
+#: src/parse.c:640
+msgid "Setting refresh interval to new value"
+msgstr "Nastavuji obnovovací interval na novou hodnotu"
+
+#: src/parse.c:643
+msgid "Setting noreply interval to new value"
+msgstr "Nastavuji interval pro stav 'bez odpovìdi' na novou hodnotu"
+
+#: src/parse.c:646
+msgid "Setting delay between pings to new value"
+msgstr "Nastavuji prodlevu mezi pingama na novou hodnotu"
+
+#: src/parse.c:649
+msgid "Setting long delay to new value"
+msgstr "Nastavuji interval vìt¹ího zpo¾dìní na novou hodnotu"
+
+#: src/parse.c:652
+msgid "Cannot evaluate OPTIONS value of"
+msgstr "Nemohu zpracovat hodnotu sekce OPTIONS"
+
+#: src/parse.c:655
+msgid "Setting title to new value"
+msgstr "Nastavuji nadpis na novou hodnotu"
+
+#: src/parse.c:661
+msgid "Realloc failed"
+msgstr "Realloc se nepovedl"
+
+#: src/parse.c:669
+msgid "Setting error log to new value"
+msgstr "Nastavuji chybový ¾urnál"
+
+#: src/parse.c:670
+msgid "Error log"
+msgstr "®urnál chyb"
+
+#: src/parse.c:672
+msgid "Setting host log to new value"
+msgstr "Nastavuji ¾urnál zmìn stavu poèítaèù"
+
+#: src/parse.c:673
+msgid "Host status change log"
+msgstr "®urnál zmìn stavu poèítaèù"
+
+#: src/parse.c:677
+msgid "Cannot open file"
+msgstr "Nemohu otevøít soubor"
+
+#: src/parse.c:704
+msgid "Only log disabled host found. The rest of the hosts will be logged."
+msgstr ""
+"Byly nalezeny pouze poèítaèe, jejich¾ stav nemá být zapisován do ¾urnálu. "
+"Zbytek poèítaèù zapisován bude."
+
+#: src/parse.c:709
+msgid "Only log enabled host found. The rest of the hosts will not be logged."
+msgstr ""
+"Byly nalezeny pouze poèítaèe, jejich¾ stavu má být zapisován do ¾urnálu. "
+"Zbytek poèítaèù zapisován nebude."
+
+#: src/parse.c:714
+msgid "Log and nolog hosts found."
+msgstr ""
+"Byly nalezeny poèítaèe, které se mají zapisovat do ¾urnálu a zároveò ty, "
+"které se zapisovat nemají."
+
+#: src/parse.c:716
+msgid "Not specified hosts will use default setting:"
+msgstr "Nespecifikované poèítaèe pou¾ijí základní nastavení:"
+
+#: src/parse.c:718
+msgid "Not specified hosts will use gobal setting:"
+msgstr "Nespecifikované poèítaèe pou¾ijí globální nastavení:"
+
+#: src/parse.c:721
+msgid "do not log."
+msgstr "nezapisovat zmìny."
+
+#: src/parse.c:723
+msgid "log (every change)."
+msgstr "zapisovat (ka¾dou zmìnu)."
+
+#: src/parse.c:725
+msgid "log"
+msgstr "zapisovat"
+
+#: src/parse.c:725
+msgid "with status last longer than"
+msgstr "pokud status trvá déle ne¾"
+
+#: src/parse.c:726
+msgid "seconds"
+msgstr "sekund"
+
+#: src/parse.c:727
+msgid "unknown setting"
+msgstr "neznámé nastavení"
+
+#: src/parse.c:797
+msgid "Warning: maximum allowed configuration files exceeded!"
+msgstr "Varování: maximální poèet konfiguraèních souborù byl pøekroèen!"
+
+#: src/parse.c:807
+msgid "Maximum count of hosts reached"
+msgstr "Maximální poèet poèítaèù dosa¾en"
+
+#: src/parse.c:808
+msgid "Modify your copy of pinger if you want more hosts (requires recompile)."
+msgstr ""
+"Zmìòte va¹i kopii pingeru pokud chcete více poèítaèù (vy¾aduje rekompilaci)."
+
+#: src/parse.c:812
+msgid "Total hosts on list"
+msgstr "Celkem poèítaèù v seznamu"
+
+#: src/ping.c:72 src/interface_gtk.c:257
+msgid "Online"
+msgstr "Online"
+
+#: src/ping.c:74 src/interface_gtk.c:277 src/interface_gtk.c:334
+msgid "Offline"
+msgstr "Offline"
+
+#: src/ping.c:76
+msgid "Unreachable"
+msgstr "Sí» nedostupná"
+
+#: src/ping.c:78 src/interface_gtk.c:267
+msgid "Delayed"
+msgstr "Zpo¾dìní"
+
+#: src/ping.c:80
+msgid "No valid answer"
+msgstr "®ádná rozumá odpovìd"
+
+#: src/ping.c:82
+msgid "Unresolved"
+msgstr "Nepøelo¾eno"
+
+#: src/ping.c:85
+msgid "Unknown status"
+msgstr "Neznámý status"
+
+#: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:297
+#: src/interface_gtk.c:361
+msgid "Host"
+msgstr "Poèítaè"
+
+#: src/ping.c:99 src/ping.c:105
+msgid "changed status to:"
+msgstr "stav zmìnìn na:"
+
+#: src/ping.c:233
+msgid ""
+"This packet is ARP and processed via process_icmp. It's definitely wrong. "
+"Host"
+msgstr ""
+"Toto je ARP paket a je zpracováván v process_icmp. Toto je úplnì ¹patnì. "
+"Poèítaè"
+
+#: src/ping.c:247 src/ping.c:261
+msgid "Packet too short!"
+msgstr "Packet je pøíli¹ krátký!"
+
+#: src/ping.c:253
+msgid "Wrong IP version!"
+msgstr "©patná verze IP!"
+
+#: src/ping.c:257
+msgid "Packet is not ICMP!"
+msgstr "Packet není typu ICMP!"
+
+#: src/ping.c:348
+msgid "Releasing socket for"
+msgstr "Uvolòuji socket pro"
+
+#: src/ping.c:350
+msgid "(unresolved host)"
+msgstr "(nepøelo¾ený poèítaè)"
+
+#: src/ping.c:353
+msgid "Cannot release raw socket for ip"
+msgstr "Nemohu uvolnit socket pro ip"
+
+#: src/pinger.c:76 src/log.c:86 src/log.c:107
+msgid "Pinger version"
+msgstr "Pinger verze"
+
+#: src/pinger.c:131 src/interface_ncurses.c:416
+msgid "Cannot select:"
+msgstr "Nemohu vybrat:"
+
+#: src/pinger.c:208
+msgid ""
+"Not running with root privileges, make sure this application has SUID bit "
+"set."
+msgstr ""
+"Nebì¾ím s rootovskými privilegii. Ujisti se, ¾e aplikace má nastavený SUID "
+"bit."
+
+#: src/pinger.c:212 src/pinger.c:360 src/pinger.c:366
+msgid "Cannot restore back user's privileges, quitting."
+msgstr "Nemohu nastavit zpìt u¾ivatelská privileges, konèím."
+
+#: src/pinger.c:235
+msgid "must be less than"
+msgstr "musí být men¹í ne¾"
+
+#: src/pinger.c:239 src/pinger.c:243
+msgid "must be greater than"
+msgstr "musí být vìt¹í ne¾"
+
+#: src/pinger.c:239 src/pinger.c:243
+msgid "Someone doesn't know how to make changes in the source code!"
+msgstr "Nìkdo neví, jak správnì dìlat zmìny ve zdrojovém kódu!"
+
+#: src/pinger.c:261
+msgid "Pinger - version"
+msgstr "Pinger - verze"
+
+#: src/pinger.c:262
+msgid "Usage:"
+msgstr "Pou¾ití:"
+
+#: src/pinger.c:264
+msgid "Parameters:"
+msgstr "Parametry:"
+
+#: src/pinger.c:265
+msgid "use GTK 2.x frontend (otherwise use ncurses)."
+msgstr "pou¾ívá GTK 2.x rozhraní (jinak se pou¾ívá ncurses)."
+
+#: src/pinger.c:266
+msgid "do not display messages into console."
+msgstr "nezobrazovat zpravy v konzoli"
+
+#: src/pinger.c:284
+msgid ""
+"Maximum configuration files count exceeded. All following files will be "
+"ignored"
+msgstr ""
+"Maximální poèet konfiguraèních souborù pøekroèen. V¹echny dal¹í soubory "
+"budou ignorovány"
+
+#: src/pinger.c:294
+msgid "Available modes:"
+msgstr "Dostupné re¾imy:"
+
+#: src/pinger.c:301
+msgid "Using mode:"
+msgstr "Pou¾ívám re¾im:"
+
+#: src/pinger.c:305
+msgid ""
+"GTK mode is not enabled, please recompile this program with enabling GTK "
+"mode."
+msgstr ""
+"GTK re¾im není dostupný, prosím rekompilujte tento program s povolením GTK "
+"re¾imu."
+
+#: src/pinger.c:320
+msgid ""
+"ncurses mode is not enabled, please recompile this program with enabling "
+"ncurses mode."
+msgstr ""
+"re¾im ncurses není dostupný, prosím rekompilujte tento program s povolením "
+"GTK re¾imu."
+
+#: src/pinger.c:341
+msgid "Cannot restore back root privileges, quiting."
+msgstr "Nemohu nastavit zpìt rootovská privilegia, konèím"
+
+#: src/pinger.c:348
+msgid "No hosts loaded!"
+msgstr "®ádné poèítaèe nenalezeny!"
+
+#: src/pinger.c:355 src/pinger.c:360
+msgid "ARP code"
+msgstr "ARP kód"
+
+#: src/pinger.c:355
+msgid "Cannot set root privileges, quitting."
+msgstr "Nemohu nastavit rootovská privilegia, konèím"
+
+#: src/pinger.c:375
+msgid "Cannot get rid of effective and saved uid."
+msgstr "Nemohu se zbavit efektivního a ulo¾eného uid."
+
+#: src/pinger.c:376
+msgid "Successfuly removed root privileges."
+msgstr "Úspì¹nì uzmuty rootovská práva."
+
+#: src/pinger.c:379
+msgid "Cannot allocate icmp packet (bad icmp 'packetsize' perhaps?)."
+msgstr "Nemohu alokovat icmp paket (nejspí¹e ¹patný parametr 'packetsize'?)."
+
+#: src/pinger.c:412 src/interface_gtk.c:450
+msgid "Parent is commiting suicide because its only child died unexpectedly."
+msgstr ""
+"Rodiè ze zoufalství páchá samovra¾du, proto¾e jeho jediný potomek "
+"neoèekávanì zakonèil bìh, fòuk."
+
+#: src/timefunc.c:32
+msgid "Cannot get time of day."
+msgstr "Nemohu zjistit èas v tento den."
+
+#: src/interface_ncurses.c:183 src/interface_gtk.c:228
+msgid "a lot!"
+msgstr "hodnì!"
+
+#: src/interface_ncurses.c:228 src/interface_gtk.c:287
+msgid "NwUnrch"
+msgstr "Sí»Nedos"
+
+#: src/interface_ncurses.c:232 src/interface_gtk.c:297
+msgid "Resolving"
+msgstr "Rozpozn."
+
+#: src/interface_ncurses.c:263 src/interface_gtk.c:80 src/interface_gtk.c:84
+#, c-format
+msgid "'q' key to quit"
+msgstr "konec klávesou 'q'"
+
+#: src/interface_ncurses.c:298 src/interface_gtk.c:369
+msgid "Delay [ms]"
+msgstr "Prodleva [ms]"
+
+#: src/interface_ncurses.c:299 src/interface_gtk.c:376
+msgid "IP"
+msgstr "IP"
+
+#: src/interface_ncurses.c:300 src/interface_gtk.c:384
+msgid "Status"
+msgstr "Stav"
+
+#: src/interface_ncurses.c:301 src/interface_gtk.c:391
+msgid "Snt/Rcv"
+msgstr "Psl/Pøj"
+
+#: src/interface_ncurses.c:302 src/interface_gtk.c:398
+msgid "Avail"
+msgstr "Dostp"
+
+#: src/interface_ncurses.c:303 src/interface_gtk.c:405
+msgid "Last OK"
+msgstr "Posl OK"
+
+#: src/interface_gtk.c:176
+msgid ""
+"Headers cannot be displayed due to bad conversion from locale to UTF8 in"
+msgstr ""
+"Nadpisy nemohou být zobrazeny proto¾e se nevede konvezce z lokálního "
+"kódování do UTF8 v"
+
+#: src/interface_gtk.c:217
+msgid "Cannot find model with number"
+msgstr "Nemohu najít model s èíslem"
+
+#: src/interface_gtk.c:427
+msgid "Unsuccessful exit, canot release sockets."
+msgstr "Neúspì¹né ukonèení, nemohu uvolnit sockety."
+
+#: src/interface_gtk.c:429
+msgid "Thank you for use."
+msgstr "Dìkuji za pou¾ívání."
+
+#: src/interface_gtk.c:429
+msgid "Successful exit."
+msgstr "Úspì¹né ukonèení."
+
+#: src/interface_gtk.c:463 src/interface_gtk.c:467 src/interface_gtk.c:469
+#: src/interface_gtk.c:470
+msgid "Actual time"
+msgstr "Aktuální èas"
+
+#: src/log.c:47
+msgid "File does not exist and cannot be created."
+msgstr "Sobor neexistuje a nemù¾e být vytvoøen."
+
+#: src/log.c:50
+msgid "This host set has already initialized log."
+msgstr "Tato sada poèítaèù má ji¾ ¾urnál definován."
+
+#: src/log.c:54
+msgid "Unknown error."
+msgstr "Neznámá chyba."
+
+#: src/log.c:64
+msgid "Initializing log"
+msgstr "Inicializuji ¾urnál"
+
+#: src/log.c:67
+msgid "Cannot open log file"
+msgstr "Nemohu otevøít soubor ¾urnálu"
+
+#: src/log.c:70
+msgid "File opened"
+msgstr "Soubor otevøen"
+
+#: src/log.c:86
+msgid "started."
+msgstr "spu¹tìn"
+
+#: src/log.c:107
+msgid "stopped"
+msgstr "zastaven"
+
+#: src/log.c:169
+msgid "Error"
+msgstr "Chyba"

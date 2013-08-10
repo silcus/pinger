@@ -1,0 +1,77 @@
+Version 0.32c:
+  * Fixed bad handling of the hosts in multiple files
+  * More stable when resizing text window
+
+Version 0.32b:
+  * 'q' to quit
+
+Version 0.32:
+  * Scrollable GTK window
+  * Debian package support
+  * Fixed memory leaks
+  * Minor changes
+
+Version 0.31d:
+  * Fixed memory leaks
+  * Fixed ncurses terminal size change
+
+Version 0.31c:
+  * Fixed console resize in X
+  * Fixed arp interface count
+  * Complete polish translation
+
+Version 0.31b:
+  * Fixed polish language set
+  * Minor bugfixes
+
+Version 0.31:
+  * Improved security
+  * ARP pinging support
+  * Customizable ICMP packet size
+  * DNS resolving
+  * Host status and error logging
+  * Bugfixes
+
+Version 0.30b:
+  * Processes replaced with threads
+  * Bugfixes
+
+Version 0.30:
+  * Multiple configuration sets support (via "tabs", given from command line)
+  * A lot of rewritten code
+  * Bugfixes
+  * More testing for unexpected things
+  * Multiple processes, resulting in more precise times 
+  * Modular design (you can implement you favorite interface too)
+
+Version 0.22c:
+  * Multiple configuration sets support
+  * Actual time in upper line
+  * Hint to quit pinger
+  * Different color for hosts with bigger delay (see Upgrade
+    section in README file)
+  * New option to name current set of hosts in configuration file
+  
+Version 0.22b:
+  * --conf <file> allows to specify another configuration file
+  
+Version 0.22:
+  * Timestamp of last successful ping added
+  
+Version 0.21b:
+  * Fixed free() bug in print_info/pinger.c
+  * Solved todo item: quit immediately when key is pressed
+  
+Version 0.21:
+  * Sent/Received
+  * Availability [%]
+  * Minor fixes
+
+Version 0.2:
+  * Ncurses support.
+  * Manpage created.
+  * Multilanguage support.
+
+Version 0.1:
+  * GTK version only, first release.
+  * Implemented Vojta's inividual timmings request.

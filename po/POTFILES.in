@@ -1,0 +1,10 @@
+# List of source files containing translatable strings.
+
+src/parse.c
+src/ping.c
+src/pinger.c
+src/timefunc.c
+src/interface_ncurses.c
+src/interface_gtk.c
+src/log.c
+
