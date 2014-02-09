@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pinger 0.31b \n"
 "Report-Msgid-Bugs-To: silk@sinus.cz\n"
-"POT-Creation-Date: 2008-01-31 02:05+0100\n"
+"POT-Creation-Date: 2014-02-09 14:01+0100\n"
 "PO-Revision-Date: 2006-03-11 13:14+0100\n"
 "Last-Translator: Tomasz Chilinski <chilek@chilan.com>\n"
 "Language-Team: Tomasz Chilinski <chilek@chilan.com>\n"
@@ -461,11 +461,11 @@ msgstr ""
 msgid "Total hosts on list"
 msgstr "Ca³kotiwa liczba hostów na li¶cie"
 
-#: src/ping.c:72 src/interface_gtk.c:257
+#: src/ping.c:72 src/interface_gtk.c:258
 msgid "Online"
 msgstr "W³±czony"
 
-#: src/ping.c:74 src/interface_gtk.c:277 src/interface_gtk.c:334
+#: src/ping.c:74 src/interface_gtk.c:278 src/interface_gtk.c:335
 msgid "Offline"
 msgstr "Wy³±czony"
 
@@ -473,7 +473,7 @@ msgstr "Wy³±czony"
 msgid "Unreachable"
 msgstr "Sieæ niedostêpna"
 
-#: src/ping.c:78 src/interface_gtk.c:267
+#: src/ping.c:78 src/interface_gtk.c:268
 msgid "Delayed"
 msgstr "Opó¼niony"
 
@@ -491,7 +491,7 @@ msgid "Unknown status"
 msgstr "nieznane ustawienie"
 
 #: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:297
-#: src/interface_gtk.c:361
+#: src/interface_gtk.c:362
 msgid "Host"
 msgstr "Host"
 
@@ -644,7 +644,7 @@ msgstr ""
 "Niemo¿liwe utworzenie pakietu ICMP (prawdopodobnie warto¶æ parametru "
 "'packetsize' jest niepoprawna?)."
 
-#: src/pinger.c:412 src/interface_gtk.c:450
+#: src/pinger.c:412 src/interface_gtk.c:451
 msgid "Parent is commiting suicide because its only child died unexpectedly."
 msgstr ""
 "Proces rodzicielski koñczy dzia³anie, poniewa¿ jego jedyny proces potomny "
@@ -654,15 +654,15 @@ msgstr ""
 msgid "Cannot get time of day."
 msgstr "Niemo¿liwe odczytanie aktualnej daty."
 
-#: src/interface_ncurses.c:183 src/interface_gtk.c:228
+#: src/interface_ncurses.c:183 src/interface_gtk.c:229
 msgid "a lot!"
 msgstr "du¿o!"
 
-#: src/interface_ncurses.c:228 src/interface_gtk.c:287
+#: src/interface_ncurses.c:228 src/interface_gtk.c:288
 msgid "NwUnrch"
 msgstr "SieæNiedos"
 
-#: src/interface_ncurses.c:232 src/interface_gtk.c:297
+#: src/interface_ncurses.c:232 src/interface_gtk.c:298
 msgid "Resolving"
 msgstr "Rozwi±zywanie."
 
@@ -671,27 +671,27 @@ msgstr "Rozwi±zywanie."
 msgid "'q' key to quit"
 msgstr "'q' klawisz powoduje wyj¶cie"
 
-#: src/interface_ncurses.c:298 src/interface_gtk.c:369
+#: src/interface_ncurses.c:298 src/interface_gtk.c:370
 msgid "Delay [ms]"
 msgstr "Opó¼nienie [ms]"
 
-#: src/interface_ncurses.c:299 src/interface_gtk.c:376
+#: src/interface_ncurses.c:299 src/interface_gtk.c:377
 msgid "IP"
 msgstr "IP"
 
-#: src/interface_ncurses.c:300 src/interface_gtk.c:384
+#: src/interface_ncurses.c:300 src/interface_gtk.c:385
 msgid "Status"
 msgstr "Stan"
 
-#: src/interface_ncurses.c:301 src/interface_gtk.c:391
+#: src/interface_ncurses.c:301 src/interface_gtk.c:392
 msgid "Snt/Rcv"
 msgstr "Wys/Otrz"
 
-#: src/interface_ncurses.c:302 src/interface_gtk.c:398
+#: src/interface_ncurses.c:302 src/interface_gtk.c:399
 msgid "Avail"
 msgstr "Dostêpny"
 
-#: src/interface_ncurses.c:303 src/interface_gtk.c:405
+#: src/interface_ncurses.c:303 src/interface_gtk.c:406
 msgid "Last OK"
 msgstr "Ostatni OK"
 
@@ -706,21 +706,21 @@ msgstr ""
 msgid "Cannot find model with number"
 msgstr "Niemo¿liwe powi±zanie modelu z numerem"
 
-#: src/interface_gtk.c:427
+#: src/interface_gtk.c:428
 msgid "Unsuccessful exit, canot release sockets."
 msgstr ""
 "Niepomy¶lne zakoñczenie programu - niemo¿liwe zwolnienie gniazd sieciowych."
 
-#: src/interface_gtk.c:429
+#: src/interface_gtk.c:430
 msgid "Thank you for use."
 msgstr "Dziêkujemy za u¿ycie naszego narzêdzia."
 
-#: src/interface_gtk.c:429
+#: src/interface_gtk.c:430
 msgid "Successful exit."
 msgstr "Pomy¶lne zakoñczenie."
 
-#: src/interface_gtk.c:463 src/interface_gtk.c:467 src/interface_gtk.c:469
-#: src/interface_gtk.c:470
+#: src/interface_gtk.c:464 src/interface_gtk.c:468 src/interface_gtk.c:470
+#: src/interface_gtk.c:471
 msgid "Actual time"
 msgstr "Aktualny czas"
 

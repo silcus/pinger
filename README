@@ -1,5 +1,5 @@
 PINGER - GTK+/ncurses multi-ping utility
-Copyright (C) 2002-2013 Petr Koloros <silkATsinus.cz>
+Copyright (C) 2002-2014 Petr Koloros <silkATseznam.cz>
 See AUTHORS for more.
 
 This program GPL'ed. See COPYING for more details.
@@ -176,9 +176,4 @@ some other hosts, default value (log_if_status_last_s) will be used for the
 rest (if it is set to -1, it means to not log. Otherwise they will be logged).
 If you don't specify log_if_status_last_s parameter, default value is 0, which
 means to log every change.
-
-
-If you find something wrong or want improvements, contact me:
-
-mail: silkATsinus.cz
 

@@ -23,4 +23,6 @@ echo Running automake.
 automake -a
 echo Running autoconf.
 autoconf
+echo Running configure.
+./configure $@
 

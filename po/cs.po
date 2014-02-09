@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pinger 0.31 \n"
 "Report-Msgid-Bugs-To: silk@sinus.cz\n"
-"POT-Creation-Date: 2008-01-31 02:05+0100\n"
+"POT-Creation-Date: 2014-02-09 14:01+0100\n"
 "PO-Revision-Date: 2008-01-17 00:35+0100\n"
 "Last-Translator: Petr Koloros <silk@sinus.cz>\n"
 "Language-Team: none <cs@li.org>\n"
@@ -432,11 +432,11 @@ msgstr ""
 msgid "Total hosts on list"
 msgstr "Celkem poèítaèù v seznamu"
 
-#: src/ping.c:72 src/interface_gtk.c:257
+#: src/ping.c:72 src/interface_gtk.c:258
 msgid "Online"
 msgstr "Online"
 
-#: src/ping.c:74 src/interface_gtk.c:277 src/interface_gtk.c:334
+#: src/ping.c:74 src/interface_gtk.c:278 src/interface_gtk.c:335
 msgid "Offline"
 msgstr "Offline"
 
@@ -444,7 +444,7 @@ msgstr "Offline"
 msgid "Unreachable"
 msgstr "Sí» nedostupná"
 
-#: src/ping.c:78 src/interface_gtk.c:267
+#: src/ping.c:78 src/interface_gtk.c:268
 msgid "Delayed"
 msgstr "Zpo¾dìní"
 
@@ -461,7 +461,7 @@ msgid "Unknown status"
 msgstr "Neznámý status"
 
 #: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:297
-#: src/interface_gtk.c:361
+#: src/interface_gtk.c:362
 msgid "Host"
 msgstr "Poèítaè"
 
@@ -613,7 +613,7 @@ msgstr "Úspì¹nì uzmuty rootovská práva."
 msgid "Cannot allocate icmp packet (bad icmp 'packetsize' perhaps?)."
 msgstr "Nemohu alokovat icmp paket (nejspí¹e ¹patný parametr 'packetsize'?)."
 
-#: src/pinger.c:412 src/interface_gtk.c:450
+#: src/pinger.c:412 src/interface_gtk.c:451
 msgid "Parent is commiting suicide because its only child died unexpectedly."
 msgstr ""
 "Rodiè ze zoufalství páchá samovra¾du, proto¾e jeho jediný potomek "
@@ -623,15 +623,15 @@ msgstr ""
 msgid "Cannot get time of day."
 msgstr "Nemohu zjistit èas v tento den."
 
-#: src/interface_ncurses.c:183 src/interface_gtk.c:228
+#: src/interface_ncurses.c:183 src/interface_gtk.c:229
 msgid "a lot!"
 msgstr "hodnì!"
 
-#: src/interface_ncurses.c:228 src/interface_gtk.c:287
+#: src/interface_ncurses.c:228 src/interface_gtk.c:288
 msgid "NwUnrch"
 msgstr "Sí»Nedos"
 
-#: src/interface_ncurses.c:232 src/interface_gtk.c:297
+#: src/interface_ncurses.c:232 src/interface_gtk.c:298
 msgid "Resolving"
 msgstr "Rozpozn."
 
@@ -640,27 +640,27 @@ msgstr "Rozpozn."
 msgid "'q' key to quit"
 msgstr "konec klávesou 'q'"
 
-#: src/interface_ncurses.c:298 src/interface_gtk.c:369
+#: src/interface_ncurses.c:298 src/interface_gtk.c:370
 msgid "Delay [ms]"
 msgstr "Prodleva [ms]"
 
-#: src/interface_ncurses.c:299 src/interface_gtk.c:376
+#: src/interface_ncurses.c:299 src/interface_gtk.c:377
 msgid "IP"
 msgstr "IP"
 
-#: src/interface_ncurses.c:300 src/interface_gtk.c:384
+#: src/interface_ncurses.c:300 src/interface_gtk.c:385
 msgid "Status"
 msgstr "Stav"
 
-#: src/interface_ncurses.c:301 src/interface_gtk.c:391
+#: src/interface_ncurses.c:301 src/interface_gtk.c:392
 msgid "Snt/Rcv"
 msgstr "Psl/Pøj"
 
-#: src/interface_ncurses.c:302 src/interface_gtk.c:398
+#: src/interface_ncurses.c:302 src/interface_gtk.c:399
 msgid "Avail"
 msgstr "Dostp"
 
-#: src/interface_ncurses.c:303 src/interface_gtk.c:405
+#: src/interface_ncurses.c:303 src/interface_gtk.c:406
 msgid "Last OK"
 msgstr "Posl OK"
 
@@ -675,20 +675,20 @@ msgstr ""
 msgid "Cannot find model with number"
 msgstr "Nemohu najít model s èíslem"
 
-#: src/interface_gtk.c:427
+#: src/interface_gtk.c:428
 msgid "Unsuccessful exit, canot release sockets."
 msgstr "Neúspì¹né ukonèení, nemohu uvolnit sockety."
 
-#: src/interface_gtk.c:429
+#: src/interface_gtk.c:430
 msgid "Thank you for use."
 msgstr "Dìkuji za pou¾ívání."
 
-#: src/interface_gtk.c:429
+#: src/interface_gtk.c:430
 msgid "Successful exit."
 msgstr "Úspì¹né ukonèení."
 
-#: src/interface_gtk.c:463 src/interface_gtk.c:467 src/interface_gtk.c:469
-#: src/interface_gtk.c:470
+#: src/interface_gtk.c:464 src/interface_gtk.c:468 src/interface_gtk.c:470
+#: src/interface_gtk.c:471
 msgid "Actual time"
 msgstr "Aktuální èas"
 
