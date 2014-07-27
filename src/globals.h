@@ -94,8 +94,8 @@ typedef struct host_data_t {
   double delay;             /* ping latency in miliseconds */
   u_int last_seq_sent;    /* sequence nr. of last packet sent */
   u_int last_seq_recv;    /* sequence nr. of last packet received */
-  u_int nr_sent;        /* number of send and received */
-  u_int nr_recv;
+  unsigned long long nr_sent;        /* number of send and received */
+  unsigned long long nr_recv;
   int ok_delay;      /* time in ms, after we send next echo when OK (sucessfuly ping - ECHO REPLY) */
   int noreply_delay;    /* time in ms, after we send next echo when NO_REPLY */
   int long_delay;    /* time in ms, after which host is marked as with long delay */

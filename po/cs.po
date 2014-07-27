@@ -4,9 +4,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pinger 0.31 \n"
+"Project-Id-Version: pinger 0.32f \n"
 "Report-Msgid-Bugs-To: silk@sinus.cz\n"
-"POT-Creation-Date: 2014-02-09 14:01+0100\n"
+"POT-Creation-Date: 2014-07-27 11:18+0200\n"
 "PO-Revision-Date: 2008-01-17 00:35+0100\n"
 "Last-Translator: Petr Koloros <silk@sinus.cz>\n"
 "Language-Team: none <cs@li.org>\n"
@@ -460,7 +460,7 @@ msgstr "Nepøelo¾eno"
 msgid "Unknown status"
 msgstr "Neznámý status"
 
-#: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:297
+#: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:329
 #: src/interface_gtk.c:362
 msgid "Host"
 msgstr "Poèítaè"
@@ -505,7 +505,7 @@ msgstr "Nemohu uvolnit socket pro ip"
 msgid "Pinger version"
 msgstr "Pinger verze"
 
-#: src/pinger.c:131 src/interface_ncurses.c:416
+#: src/pinger.c:131 src/interface_ncurses.c:448
 msgid "Cannot select:"
 msgstr "Nemohu vybrat:"
 
@@ -623,44 +623,44 @@ msgstr ""
 msgid "Cannot get time of day."
 msgstr "Nemohu zjistit èas v tento den."
 
-#: src/interface_ncurses.c:183 src/interface_gtk.c:229
+#: src/interface_ncurses.c:210 src/interface_gtk.c:229
 msgid "a lot!"
 msgstr "hodnì!"
 
-#: src/interface_ncurses.c:228 src/interface_gtk.c:288
+#: src/interface_ncurses.c:260 src/interface_gtk.c:288
 msgid "NwUnrch"
 msgstr "Sí»Nedos"
 
-#: src/interface_ncurses.c:232 src/interface_gtk.c:298
+#: src/interface_ncurses.c:264 src/interface_gtk.c:298
 msgid "Resolving"
 msgstr "Rozpozn."
 
-#: src/interface_ncurses.c:263 src/interface_gtk.c:80 src/interface_gtk.c:84
+#: src/interface_ncurses.c:295 src/interface_gtk.c:80 src/interface_gtk.c:84
 #, c-format
 msgid "'q' key to quit"
 msgstr "konec klávesou 'q'"
 
-#: src/interface_ncurses.c:298 src/interface_gtk.c:370
+#: src/interface_ncurses.c:330 src/interface_gtk.c:370
 msgid "Delay [ms]"
 msgstr "Prodleva [ms]"
 
-#: src/interface_ncurses.c:299 src/interface_gtk.c:377
+#: src/interface_ncurses.c:331 src/interface_gtk.c:377
 msgid "IP"
 msgstr "IP"
 
-#: src/interface_ncurses.c:300 src/interface_gtk.c:385
+#: src/interface_ncurses.c:332 src/interface_gtk.c:385
 msgid "Status"
 msgstr "Stav"
 
-#: src/interface_ncurses.c:301 src/interface_gtk.c:392
+#: src/interface_ncurses.c:333 src/interface_gtk.c:392
 msgid "Snt/Rcv"
 msgstr "Psl/Pøj"
 
-#: src/interface_ncurses.c:302 src/interface_gtk.c:399
+#: src/interface_ncurses.c:334 src/interface_gtk.c:399
 msgid "Avail"
 msgstr "Dostp"
 
-#: src/interface_ncurses.c:303 src/interface_gtk.c:406
+#: src/interface_ncurses.c:335 src/interface_gtk.c:406
 msgid "Last OK"
 msgstr "Posl OK"
 

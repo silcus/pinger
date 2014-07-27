@@ -1,3 +1,14 @@
+Version 0.32f:
+  * Fixed compilation without GTK
+  * Fixed buffer overflow on long runs (rcv/snt numbers)
+
+Version 0.32e:
+  * Fixed ARP on 64-bit systems
+  * Fixed ARP interface enumeration
+
+Version 0.32d:
+  * Various small fixes
+  
 Version 0.32c:
   * Fixed bad handling of the hosts in multiple files
   * More stable when resizing text window

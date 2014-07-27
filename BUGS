@@ -1,4 +1,3 @@
 version 0.21c and newer:
 * doesn't show precise triptime - depends on list order.
-* ncurses mode: resize of terminal causes crash (interrupting select())
 * with glibc without gettext support must be -lintl added by hand for linker

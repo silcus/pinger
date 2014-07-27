@@ -33,6 +33,33 @@ int get_curr_set_nr() {
   return set_nr;
 }
 
+/* print limited number of characters representing unsigned long long
+ * number into a given string. If the string is bigger, than allowed
+ * by 'max_chars', put '~' at the beginning and strip it so, only
+ * the ending characters are written into 'c'. Return number of written
+ * characters */
+static nr_print_ull(char *c, int max_chars, unsigned long long l)
+{
+    char line[200], *p = line;
+    int n;
+
+    n = sprintf(line, "%llu", l);
+    if (n > max_chars) {
+        p = (n - max_chars + 1) + line;
+        *p = '~';
+    }
+    n = 0;
+    while (*p != 0) {
+        n++;
+        *c = *p;
+        c++;
+        p++;
+    }
+    *c = *p;
+
+    return n;
+}
+
 void set_set_nr(int nr) {
   set_nr = nr;
 }
@@ -160,7 +187,7 @@ void show_host_status(host_data * host, int colpair, int attr, char *statstr,
 int ncurses_show_status(host_data *host) {
 
   char number_str[13];
-  char sr_str[15];
+  char sr_str[16];
   char avail_str[7];
   int  avail_ratio;
   char lastok_str[15];
@@ -185,9 +212,14 @@ int ncurses_show_status(host_data *host) {
   number_str[sizeof(number_str) - 1] = 0;
   if ((strlen(number_str) + 3) < ( sizeof(number_str) - 1))
     strcat(number_str, " ms");
-  sprintf(sr_str, "%d/%d", h->nr_sent, h->nr_recv);
+  {
+      /* 15 characters at maximum */
+      int n = nr_print_ull(sr_str, 7, h->nr_sent);
+      sprintf(sr_str + n, "/");
+      nr_print_ull(sr_str + n + 1, 7, h->nr_recv);
+  }
   if (h->nr_recv > 0) {
-    avail_ratio = (int)100*h->nr_recv/h->nr_sent;
+    avail_ratio = (int)(100*h->nr_recv/h->nr_sent);
     if (avail_ratio < 10)
       snprintf(avail_str, sizeof(avail_str) - 1, "  %d %%", avail_ratio);
     else if (avail_ratio < 100)

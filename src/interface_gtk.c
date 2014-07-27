@@ -184,7 +184,7 @@ gchar *my_locale_to_utf8(char *text, char *file, int line)
 int gtk_show_status(host_data * host) {
 
   char number_str[11];
-  char sr_str[15];
+  char sr_str[45];
   char avail_str[6];
   int  avail_ratio;
   char lastok_str[15];
@@ -229,9 +229,9 @@ int gtk_show_status(host_data * host) {
     sprintf(number_str, "%s", my_locale_to_utf8(_("a lot!"), __FILE__, __LINE__));
   else sprintf(number_str, "%4.2f", h->delay);
   strcat(number_str, " ms");
-  sprintf(sr_str, "%d/%d", h->nr_sent, h->nr_recv);
+  sprintf(sr_str, "%llu/%llu", h->nr_sent, h->nr_recv);
   if (h->nr_recv > 0) {
-    avail_ratio = (int)100*h->nr_recv/h->nr_sent;
+    avail_ratio = (int)(100*h->nr_recv/h->nr_sent);
     sprintf(avail_str, "%d %%", avail_ratio);
     if (h->lastok_tv.tv_sec > 0) {
       timetmp = localtime(&(h->lastok_tv.tv_sec));

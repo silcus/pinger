@@ -1,3 +1,17 @@
+commit 5530852cd0a7c16acb44bf4be95d7af8dfb57662
+Author: Petr Koloros <silk@sinus.cz>
+Date:   Sun Feb 9 15:04:59 2014 +0100
+
+    * fixed compilation issue on systems without GTK (reported by Jeroen Roovers/Gentoo)
+
+commit 0661f8fd8d168a9d88447a3a4564b9f46a5412cb
+Author: Petr Koloros <silk@sinus.cz>
+Date:   Sat Aug 10 22:19:59 2013 +0200
+
+    * import pinger 0.32e from svn
+
+-- moved from svn to git
+
 2013-08-09 20:49  silk
 
 	* ChangeLog, README, configure.in: * Release 0.32e
