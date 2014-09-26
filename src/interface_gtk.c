@@ -7,15 +7,15 @@
 
 GtkWidget *window;
 /* lists is one window containing several rows */
-GtkWidget *list;
-GtkWidget *scrolled_list;
+static GtkWidget *list;
+static GtkWidget *scrolled_list;
 /* tab has name and contains widget (list for example) */
-GtkWidget *tabs;
+static GtkWidget *tabs;
 /* status bar for clock */  
-GtkWidget *status_bar;
-guint status_bar_context;
+static GtkWidget *status_bar;
+static guint status_bar_context;
 /* Box where store tabs and status bar */
-GtkWidget *vbox;
+static GtkWidget *vbox;
 
 /* each list has model which says how lists looks like. I need these models */
 typedef struct models_t {
@@ -24,16 +24,16 @@ typedef struct models_t {
   int id;
 } gtk_models;
 
-gtk_models *lists_models;
+static gtk_models *lists_models;
 
 struct regular_disp_data {
-	hosts_data *hosts;
-	int *stop_loop;
+  hosts_data *hosts;
+  int *stop_loop;
   guint disp_timeout_id;
 };
 
 /* Interface display data */
-struct regular_disp_data * int_disp_data;
+static struct regular_disp_data * int_disp_data;
 
 /* define columns */
 enum
@@ -49,20 +49,22 @@ enum
    N_COLUMNS
 };
 
-GtkWidget *create_list(hosts_data * hosts, int set_nr, GtkListStore **model);
-gboolean display_pinger_status(gpointer data);
+static GtkWidget *create_list(hosts_data * hosts, int set_nr, GtkListStore **model);
+static gboolean display_pinger_status(gpointer data);
+static gint gtk_delete_event(GtkWidget *widget, GdkEvent  *event, gpointer data);
+static gchar *my_locale_to_utf8(char *text, char *file, int line);
 
-void tab_refresh_rate(GtkWidget *widget, GdkEvent  *event,
+static void tab_refresh_rate(GtkWidget *widget, GdkEvent  *event,
                        gpointer   data )
 {
   g_source_remove(int_disp_data->disp_timeout_id);
   int_disp_data->disp_timeout_id = g_timeout_add( (guint32) *(int *)data, display_pinger_status, 
-			(gpointer) int_disp_data);
+      (gpointer) int_disp_data);
 }
 
 static void key_pressed(GtkWidget* win, GdkEventKey *event)
 {
-  if ((event->keyval == GDK_q) || (event->keyval == GDK_Q))
+  if ((event->keyval == GDK_KEY_q) || (event->keyval == GDK_KEY_Q))
     gtk_main_quit();
 }
 
@@ -76,8 +78,12 @@ void gtk_interface_init(int *argc, char **argv[], char *title, hosts_data *hosts
   gtk_init(argc, argv);
   /* Create new window with title */
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  titlestr = malloc(strlen(VERSION) + strlen("Pinger v") + 
-      strlen(_("'q' key to quit")) + 3 + 1);
+  titlestr = malloc(strlen(VERSION) + strlen("Pinger v") + strlen(VERSION) +
+      strlen(_("'q' key to quit")) + 1);
+  if (titlestr == NULL) {
+      fprintf(stderr, "%s:%d: malloc failed\n", __FILE__, __LINE__);
+      gtk_delete_event(NULL, NULL, (gpointer) hosts);
+  }
   strcpy(titlestr, "Pinger v");
   strcat(titlestr, VERSION);
   strcat(titlestr, " - ");
@@ -164,7 +170,7 @@ void gtk_interface_done(char *error_str)
 }
 
 /* locale_to_utf8 conversion with error handling */
-gchar *my_locale_to_utf8(char *text, char *file, int line)
+static gchar *my_locale_to_utf8(char *text, char *file, int line)
 {
   /* helper variables for conversion to UTF8 */
   gsize nr,nw;
@@ -308,7 +314,7 @@ int gtk_show_status(host_data * host) {
 }
 
 /* Create the list of "messages" */
-GtkWidget *create_list(hosts_data * hosts, int set_nr, GtkListStore **model)
+static GtkWidget *create_list(hosts_data * hosts, int set_nr, GtkListStore **model)
 {
   host_data * host_info;
 
@@ -420,37 +426,37 @@ GtkWidget *create_list(hosts_data * hosts, int set_nr, GtkListStore **model)
 }
 
 /* delete_event callback function. data is (hosts_data *) */
-gint gtk_delete_event( GtkWidget *widget,
+static gint gtk_delete_event( GtkWidget *widget,
                    GdkEvent  *event,
                    gpointer   data )
 {
   if (free_sockets((hosts_data *)data)) 
-		fprintf(stderr, "%s\n", _("Unsuccessful exit, canot release sockets."));
+    fprintf(stderr, "%s\n", _("Unsuccessful exit, canot release sockets."));
   else 
     qprint("%s %s\n", _("Thank you for use."), _("Successful exit."));
   
-	gtk_main_quit();
+  gtk_main_quit();
 
-	return FALSE;
+  return FALSE;
 }
 
-gboolean display_pinger_status(gpointer data)
+static gboolean display_pinger_status(gpointer data)
 {
-	struct regular_disp_data *disp_data;
+  struct regular_disp_data *disp_data;
   hosts_data *hosts;
   host_data *host_info;
   char time_str[9];
   char status_bar_text[MAX_STATUS_BAR_TEXT_LEN+1];
   int l;
 
-	disp_data = (struct regular_disp_data *) data;
+  disp_data = (struct regular_disp_data *) data;
   hosts = disp_data->hosts;
   host_info = hosts->host_info;
-	if (*disp_data->stop_loop) {
-		fprintf(stderr, "%s\n", 
-				_("Parent is commiting suicide because its only child died unexpectedly."));
-		gtk_delete_event(NULL, NULL, (gpointer) hosts);
-	}
+  if (*disp_data->stop_loop) {
+    fprintf(stderr, "%s\n", 
+        _("Parent is commiting suicide because its only child died unexpectedly."));
+    gtk_delete_event(NULL, NULL, (gpointer) hosts);
+  }
   
   while (host_info != NULL) {
     /* FIXME handle return value of this */
@@ -480,14 +486,14 @@ gboolean display_pinger_status(gpointer data)
 
 void gtk_gui_loop(hosts_data *hosts, int *stop_loop)
 {
-	struct regular_disp_data disp_data;
+  struct regular_disp_data disp_data;
 
   int_disp_data = &disp_data;
-	disp_data.hosts = hosts;
-	disp_data.stop_loop = stop_loop;
-	
+  disp_data.hosts = hosts;
+  disp_data.stop_loop = stop_loop;
+  
   disp_data.disp_timeout_id = g_timeout_add( (guint32) hosts->titles->refresh_int, display_pinger_status, 
-			(gpointer) &disp_data);
+      (gpointer) &disp_data);
   display_pinger_status((gpointer)&disp_data);
 
   gtk_main();

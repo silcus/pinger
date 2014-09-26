@@ -1,7 +1,7 @@
 #ifndef _FAKE_GTK_H
 #define _FAKE_GTK_H_
 
-#ifndef HAVE_GTK_2
+#if !defined(HAVE_GTK_2) && !defined(HAVE_GTK_3)
 
 #define GtkWidget int
 #define GdkEvent int
@@ -14,6 +14,6 @@
 
 #include <gtk/gtk.h>
 
-#endif /* HAVE_GTK_2 */
+#endif /* HAVE_GTK_2/3 */
 
 #endif /* _FAKE_GTK_H_ */

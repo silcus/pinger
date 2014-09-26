@@ -1,8 +1,8 @@
-EXTRA_DIST = gtkpinger pinger.1
+EXTRA_DIST = gtkpinger gtk3pinger pinger.1
 
 bin_PROGRAMS = pinger
 man_MANS = pinger.1
-bin_SCRIPTS = gtkpinger
+bin_SCRIPTS = gtkpinger gtk3pinger
 
   P_SOURCES = timefunc.c parse.c ping.c pinger.c dns.c log.c timefunc.h parse.h ping.h globals.h fake_gtk.h dns.h log.h
 if HAVE_CURSES
@@ -20,7 +20,12 @@ if HAVE_GTK_2
 else
   P_SOURCES_GTK = 
 endif
-pinger_SOURCES = $(P_SOURCES) $(P_SOURCES_CURSES) $(P_SOURCES_GTK) $(P_SOURCES_ARP)
+if HAVE_GTK_3
+  P_SOURCES_GTK3 = interface_gtk.c interface_gtk.h
+else
+  P_SOURCES_GTK3 = 
+endif
+pinger_SOURCES = $(P_SOURCES) $(P_SOURCES_CURSES) $(P_SOURCES_GTK) $(P_SOURCES_GTK3) $(P_SOURCES_ARP)
 
 install-exec-hook:
 	if [ `id | cut -c7-10` != "root" ]; then echo -e "\nRoot privileges are NECCESSARY during installation !!!\n"; exit 1; fi

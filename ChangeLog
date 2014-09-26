@@ -1,3 +1,9 @@
+commit 72802602edf66df4e96cb9d497b82a23e231f7f7
+Author: Petr Koloros <silk@seznam.cz>
+Date:   Sun Jul 27 11:22:14 2014 +0200
+
+    * fixed stack overflow in rcv/sent string, thanks for spotting go to Kyrylo Shpytsya
+
 commit 5530852cd0a7c16acb44bf4be95d7af8dfb57662
 Author: Petr Koloros <silk@sinus.cz>
 Date:   Sun Feb 9 15:04:59 2014 +0100
@@ -9,7 +15,6 @@ Author: Petr Koloros <silk@sinus.cz>
 Date:   Sat Aug 10 22:19:59 2013 +0200
 
     * import pinger 0.32e from svn
-
 -- moved from svn to git
 
 2013-08-09 20:49  silk

@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(src/pinger.c)
-AM_INIT_AUTOMAKE(pinger, 0.32f-snapshost-140727)
+AM_INIT_AUTOMAKE(pinger, 0.33)
 AM_CONFIG_HEADER(config.h)
 
 dnl Checks for programs.
@@ -54,19 +54,32 @@ AC_TYPE_SIZE_T
 AC_HEADER_TIME
 AM_INADDRT
 
-AC_ARG_ENABLE(gtk, [  --enable-gtk            enable GTK+ support],
-              [if test "$enableval" = no; then no_gtk=yes; fi])
-AC_MSG_CHECKING([for GTK+ support])
-if test x$no_gtk != xyes; then
-PKG_CHECK_MODULES(GTK, [
-	gtk+-2.0 >= 2.4
-	], no_gtk=nol HAVE_GTK_2=1; AC_DEFINE([HAVE_GTK_2], 1, Found GTK 2), no_gtk=yes)
+dnl GTK3/GTK2 tests
+dnl Note: PKG_CHECK_MODULES cannot be used conditionaly due to sharing the tests and depending on it
+AC_ARG_ENABLE([gtk], AS_HELP_STRING([--enable-gtk[[[=version]]]], [Build with GTK+ interface. Supported versions are gtk2 and gtk3. Default is gtk2.]))
+PKG_CHECK_MODULES(GTK, [ gtk+-2.0 >= 2.4 ], HAVE_GTK_2=1; )
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
+PKG_CHECK_MODULES(GTK3, [ gtk+-3.0 >= 3.12 ], HAVE_GTK_3=1)
+AC_SUBST(GTK3_CFLAGS)
+AC_SUBST(GTK3_LIBS)
+
+if test "x$enableval" = "x" || test "x$enableval" = "xgtk2"; then
 CFLAGS="$CFLAGS $GTK_CFLAGS"
 LIBS="$LIBS $GTK_LIBS"
+echo "nastavuju GTK_3 na 0"
+HAVE_GTK_3=0
+AC_DEFINE(HAVE_GTK_2, 1, Found GTK+ 2.x support)
+elif test "x$enableval" = "xgtk3"; then
+CFLAGS="$CFLAGS $GTK3_CFLAGS"
+LIBS="$LIBS $GTK3_LIBS"
+HAVE_GTK_2=0
+AC_DEFINE(HAVE_GTK_3, 1, Found GTK+ 3.x support)
+else
+echo "Sorry, the value $enableval is not supported as argument of --enable-gtk."
+exit 1
 fi
-AC_MSG_RESULT($enableval)
+
 dnl Check for additional external libraries etc..
 AC_CHECK_LIB(ncurses, initscr, HAVE_CURSES=1; LIBS="$LIBS -lncurses";
 	AC_DEFINE([HAVE_LIBNCURSES], [1], found ncurses library))
@@ -77,23 +90,28 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(gettimeofday inet_ntoa memset socket strchr strerror setresuid, ,
 	AC_MSG_ERROR(Cannot find all required library functions))
 
-AM_CONDITIONAL(HAVE_CURSES, test x$HAVE_CURSES == x1)
-AM_CONDITIONAL(HAVE_GTK_2, test x$HAVE_GTK_2 == x1)
+AM_CONDITIONAL([HAVE_CURSES], [test x$HAVE_CURSES = x1])
+AM_CONDITIONAL([HAVE_GTK_2], [test x$HAVE_GTK_2 = x1])
+AM_CONDITIONAL([HAVE_GTK_3], [test x$HAVE_GTK_3 = x1])
 
 AC_OUTPUT(Makefile src/Makefile m4/Makefile po/Makefile.in)
 
-if test "x$HAVE_CURSES$HAVE_GTK_2" = "x"; then
-	AC_MSG_ERROR(No display mode available. You must have at least one of possible libraries (gtk, ncurses).)
+if test "x$HAVE_CURSES$HAVE_GTK_2$HAVE_GTK_3" = "x"; then
+	AC_MSG_ERROR(No display mode available. You must have at least one of possible libraries (gtk, gtk3, ncurses).)
 fi
 
 
-
 echo ""
-echo "Available modes:"
+echo "Available modes (note GTK2 and GTK3 can't be compiled at the same time):"
 if test "x$HAVE_GTK_2" = "x1"; then
 	echo -e "  GTK 2.x:\tYES";
 else
 	echo -e "  GTK 2.x:\tNO";
+fi
+if test "x$HAVE_GTK_3" = "x1"; then
+	echo -e "  GTK 3.x:\tYES";
+else
+	echo -e "  GTK 3.x:\tNO";
 fi
 if test "x$HAVE_CURSES" = "x1"; then
 	echo -e "  ncurses:\tYES";
