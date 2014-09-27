@@ -133,7 +133,6 @@ typedef struct {
 enum mode_enum {
   NCURSES,
   GTK,
-  GTK3
 };
 
 /* filelist struct to hold multiple configuration files if occur */

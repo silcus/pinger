@@ -48,10 +48,7 @@
 #ifdef HAVE_LIBNCURSES
 #include "interface_ncurses.h"
 #endif
-#ifdef HAVE_GTK_2
-#include "interface_gtk.h"
-#endif
-#ifdef HAVE_GTK_3
+#if defined(HAVE_GTK_2) || defined(HAVE_GTK_3)
 #include "interface_gtk.h"
 #endif
 
@@ -228,10 +225,10 @@ int main( int   argc,
 
 /* trying to set default mode as defines enable */
 #ifndef HAVE_LIBNCURSES
-#ifndef HAVE_GTK_3
+#if defined(HAVE_GTK_2) || defined(HAVE_GTK_3)
   mode = GTK;
 #else
-  mode = GTK3;
+#error There must be some defined GUI mode
 #endif
 #else
   mode = NCURSES;
@@ -264,15 +261,12 @@ int main( int   argc,
     for (a = 1; a < argc; a++) {
       if (!strcmp(argv[a], "--gtk")) {
         mode = GTK;
-      } else if (!strcmp(argv[a], "--gtk3")) {
-        mode = GTK3;
       } else if (!strcmp(argv[a], "--help")) {
         printf("\n%s %s - Copyright 2002-2005 %s, GPL'ed\n", _("Pinger - version"), VERSION, AUTHOR_STR);
         printf("\n%s\n", _("Usage:"));
         printf("    pinger [--gtk] [--quiet] [conffile1] [conffile2] ..\n\n");
         printf("%s\n", _("Parameters:"));
         printf("    --gtk   : %s\n", _("use GTK 2.x frontend (otherwise use ncurses)."));
-        printf("    --gtk3  : %s\n", _("use GTK 3.x frontend (otherwise use ncurses)"));
         printf("    --quiet : %s\n\n", _("do not display messages into console."));
         exit(EXIT_FAILURE);
       } else if (!strcmp(argv[a], "--quiet"))
@@ -306,41 +300,23 @@ int main( int   argc,
   qprint(" ncurses");
 #endif
 #ifdef HAVE_GTK_2
-  qprint(" GTK");
+  qprint(" GTK (v2)");
 #endif
 #ifdef HAVE_GTK_3
-  qprint(" GTK3");
+  qprint(" GTK (v3)");
 #endif
   qprint("\n%s ", _("Using mode:"));
   
   if (mode == GTK) {      
-#ifndef HAVE_GTK_2
+#if !defined(HAVE_GTK_2) && !defined(HAVE_GTK_3)
     log_event(NULL, err_log, -1, _("GTK mode is not enabled, \
 please recompile this program with enabling GTK mode."));
     exit(EXIT_FAILURE);
 #endif
     qprint("GTK\n");
-#ifdef HAVE_GTK_2    
+#if defined(HAVE_GTK_2) || defined(HAVE_GTK_3)
 #if defined(DEBUG)
     log_event(NULL, err_log, -1, "setting gtk2 interface functions\n");
-#endif
-    show_status = gtk_show_status;
-    interface_init = gtk_interface_init;
-    gui_loop = gtk_gui_loop;
-    interface_done = gtk_interface_done;
-#endif
-  } 
-
-  if (mode == GTK3) {      
-#ifndef HAVE_GTK_3
-    log_event(NULL, err_log, -1, _("GTK3 mode is not enabled, \
-please recompile this program with enabling GTK3 mode."));
-    exit(EXIT_FAILURE);
-#endif
-    qprint("GTK3\n");
-#ifdef HAVE_GTK_3    
-#if defined(DEBUG)
-    log_event(NULL, err_log, -1, "setting gtk3 interface functions\n");
 #endif
     show_status = gtk_show_status;
     interface_init = gtk_interface_init;

@@ -1,8 +1,8 @@
-EXTRA_DIST = gtkpinger gtk3pinger pinger.1
+EXTRA_DIST = gtkpinger pinger.1
 
 bin_PROGRAMS = pinger
 man_MANS = pinger.1
-bin_SCRIPTS = gtkpinger gtk3pinger
+bin_SCRIPTS = gtkpinger
 
   P_SOURCES = timefunc.c parse.c ping.c pinger.c dns.c log.c timefunc.h parse.h ping.h globals.h fake_gtk.h dns.h log.h
 if HAVE_CURSES
