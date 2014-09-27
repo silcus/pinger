@@ -1,17 +1,32 @@
+commit ca1193999a0520b3d76cf26675e8a0567eecf33b
+Author: Petr Koloros 
+Date:   Sat Sep 27 10:45:00 2014 +0200
+
+    * unify gtk modes into one, shared by gtk2/gtk3
+    
+    This makes it easier. Both modes are not possible to support at
+    once and the GTK design is (still) the same.
+
+commit 74d6d5ab26e439c300536259543b77df1f366b77
+Author: Petr Koloros 
+Date:   Sat Sep 27 00:48:57 2014 +0200
+
+    * added GTK+ 3 support
+
 commit 72802602edf66df4e96cb9d497b82a23e231f7f7
-Author: Petr Koloros <silk@seznam.cz>
+Author: Petr Koloros 
 Date:   Sun Jul 27 11:22:14 2014 +0200
 
     * fixed stack overflow in rcv/sent string, thanks for spotting go to Kyrylo Shpytsya
 
 commit 5530852cd0a7c16acb44bf4be95d7af8dfb57662
-Author: Petr Koloros <silk@sinus.cz>
+Author: Petr Koloros 
 Date:   Sun Feb 9 15:04:59 2014 +0100
 
     * fixed compilation issue on systems without GTK (reported by Jeroen Roovers/Gentoo)
 
 commit 0661f8fd8d168a9d88447a3a4564b9f46a5412cb
-Author: Petr Koloros <silk@sinus.cz>
+Author: Petr Koloros 
 Date:   Sat Aug 10 22:19:59 2013 +0200
 
     * import pinger 0.32e from svn
@@ -224,27 +239,27 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  src/parse.h, src/ping.c, src/ping.h, src/pinger.1, src/pinger.c,
 	  src/timefunc.c, src/timefunc.h: Pinger v 0.31 converted from CVS.
 
-2006-03-08 00:06  Petr Koloros <silk@sinus.cz>
+2006-03-08 00:06  Petr Koloros 
 
 	* AUTHORS, ChangeLog, README: README and AUTHORS reviewed. This is
 	  0.31 release.
 
-2006-03-07 23:35  Petr Koloros <silk@sinus.cz>
+2006-03-07 23:35  Petr Koloros 
 
 	* NEWS, autogen.sh, configure.in, po/cs.po, po/pinger.pot,
 	  src/log.c, src/pinger.c: Configure updated to reflect new
 	  headers.
 
-2006-03-05 22:42  Petr Koloros <silk@sinus.cz>
+2006-03-05 22:42  Petr Koloros 
 
 	* README, po/cs.po, src/parse.c, src/ping.c: Removed unneccessary
 	  comments and debug code.  README review.
 
-2006-03-05 22:42  Petr Koloros <silk@sinus.cz>
+2006-03-05 22:42  Petr Koloros 
 
 	* src/: log.c, log.h: Fixed log cleanup.
 
-2006-03-05 22:41  Petr Koloros <silk@sinus.cz>
+2006-03-05 22:41  Petr Koloros 
 
 	* po/cs.po, src/log.c, src/parse.c, src/ping.h, src/pinger.c:
 	  Removed -s parameter and replaced with icmp_packet_size in the
@@ -252,17 +267,17 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  file.  Fixed some error and verbose messages.  Review PO file for
 	  Czech language
 
-2006-03-04 00:47  Petr Koloros <silk@sinus.cz>
+2006-03-04 00:47  Petr Koloros 
 
 	* po/cs.po, po/pinger.pot, src/globals.h, src/parse.c, src/ping.c,
 	  src/ping.h, src/pinger.c: Added -s for icmp packet size.
 
-2006-03-01 23:32  Petr Koloros <silk@sinus.cz>
+2006-03-01 23:32  Petr Koloros 
 
 	* README, po/cs.po, po/pinger.pot: GTK version has status bar with
 	  actual time and any key causes quit.
 
-2006-03-01 04:45  Petr Koloros <silk@sinus.cz>
+2006-03-01 04:45  Petr Koloros 
 
 	* README, po/cs.po, po/pinger.pot, src/Makefile.am, src/arp.c,
 	  src/globals.h, src/parse.c, src/parse.h, src/ping.c,
@@ -273,97 +288,97 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  and the rest is done).  Gtkpinger script is not generated (with
 	  bug), but distributed in the package.
 
-2006-02-11 00:07  Petr Koloros <silk@sinus.cz>
+2006-02-11 00:07  Petr Koloros 
 
 	* README, configure.in, src/globals.h, src/parse.c, src/pinger.c,
 	  src/todo: Limited count of configuration files used.	Updated
 	  README.  Updated pinger.1
 
-2006-01-31 23:21  Petr Koloros <silk@sinus.cz>
+2006-01-31 23:21  Petr Koloros 
 
 	* src/: dns.c, dns.h, log.c, log.h, parse.c, pinger.c: Cosmetic
 	  changes and comments.  EUID changes so root operations are
 	  permited only when opening sockets.
 
-2006-01-25 03:44  Petr Koloros <silk@sinus.cz>
+2006-01-25 03:44  Petr Koloros 
 
 	* src/: Makefile.am, arp.c, arp.h, dns.c, dns.h, globals.h,
 	  interface_ncurses.c, log.c, log.h, parse.c, parse.h, ping.c,
 	  ping.h, pinger.c, timefunc.c, timefunc.h: Logging support, quite
 	  large code changes and fixes.
 
-2005-11-20 22:11  Petr Koloros <silk@sinus.cz>
+2005-11-20 22:11  Petr Koloros 
 
 	* Makefile.am, configure.in, m4/inaddrt.m4, src/arp.h: Test for
 	  in_addr_t.
 
-2005-11-06 23:07  Petr Koloros <silk@sinus.cz>
+2005-11-06 23:07  Petr Koloros 
 
 	* src/: dns.c, globals.h, interface_ncurses.c, parse.c, ping.c,
 	  pinger.c, todo: Resolved IPs which are already on the list are
 	  handled now as pointer to the host with that IP (only meassured
 	  data).
 
-2005-11-06 23:05  Petr Koloros <silk@sinus.cz>
+2005-11-06 23:05  Petr Koloros 
 
 	* src/: dns.c, globals.h, interface_ncurses.c, parse.c, ping.c,
 	  pinger.c: Hosts are in dynamic structure now instead of static
 	  one.
 
-2005-11-06 23:04  Petr Koloros <silk@sinus.cz>
+2005-11-06 23:04  Petr Koloros 
 
 	* configure.in, src/arp.c, src/parse.c, src/todo: Arp code cleanup
 	  - now there are only necessary parts.
 
-2005-11-06 23:01  Petr Koloros <silk@sinus.cz>
+2005-11-06 23:01  Petr Koloros 
 
 	* README, src/Makefile.am, src/dns.c, src/dns.h, src/globals.h,
 	  src/interface_ncurses.c, src/parse.c, src/parse.h, src/ping.c,
 	  src/ping.h, src/pinger.c, src/todo: Domain resolving support.
 
-2005-11-06 22:59  Petr Koloros <silk@sinus.cz>
+2005-11-06 22:59  Petr Koloros 
 
 	* src/: arp.c, arp.h: Arp code cleanup.
 
-2005-11-06 22:35  Petr Koloros <silk@sinus.cz>
+2005-11-06 22:35  Petr Koloros 
 
 	* README, configure.in, src/Makefile.am, src/globals.h,
 	  src/parse.c, src/parse.h, src/ping.c, src/ping.h, src/pinger.c,
 	  src/arp.c, src/arp.h: Arp code implemented. Not yet clean.
 
-2005-09-08 11:43  Petr Koloros <silk@sinus.cz>
+2005-09-08 11:43  Petr Koloros 
 
 	* ChangeLog, NEWS, README, po/cs.po, po/pinger.pot, src/parse.c:
 	  0.30b threaded version seems to be prepared now.
 
-2005-09-08 11:25  Petr Koloros <silk@sinus.cz>
+2005-09-08 11:25  Petr Koloros 
 
 	* src/: globals.h, pinger.c: Fixed locale initialization and gtk
 	  display status function calling.
 
-2005-07-11 21:12  Petr Koloros <silk@sinus.cz>
+2005-07-11 21:12  Petr Koloros 
 
 	* src/pinger.c: Moved include in its place :-).
 
-2005-07-11 21:12  Petr Koloros <silk@sinus.cz>
+2005-07-11 21:12  Petr Koloros 
 
 	* NEWS, configure.in, src/pinger.c: Processes replaced with
 	  threads.
 
-2005-07-11 20:06  Petr Koloros <silk@sinus.cz>
+2005-07-11 20:06  Petr Koloros 
 
 	* ChangeLog, NEWS, po/cs.po, po/pinger.pot,
 	  src/interface_ncurses.c, src/interface_ncurses.h, src/ping.c,
 	  src/ping.h, src/pinger.c, src/todo: Test for dead child added and
 	  some verbosity to terminating functions.
 
-2005-03-18 23:21  Petr Koloros <silk@sinus.cz>
+2005-03-18 23:21  Petr Koloros 
 
 	* README, po/cs.po, po/pinger.pot, src/interface_ncurses.c,
 	  src/parse.c, src/parse.h, src/pinger.c: Max tab size checking and
 	  some info in README added. Also some micro changes in comments.
 
-2005-02-23 17:32  Petr Koloros <silk@sinus.cz>
+2005-02-23 17:32  Petr Koloros 
 
 	* src/: fake_gtk.h, interface_ncurses.c, interface_ncurses.h,
 	  parse.c, parse.h, pinger.c, todo: Titles assigning revised in
@@ -371,7 +386,7 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  final look is finished. Just some checks and bells and whistles
 	  will be added.
 
-2005-02-22 00:23  Petr Koloros <silk@sinus.cz>
+2005-02-22 00:23  Petr Koloros 
 
 	* configure.in, src/Makefile.am, src/fake_gtk.h, src/globals.h,
 	  src/interface_ncurses.c, src/interface_ncurses.h, src/parse.c,
@@ -380,7 +395,7 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  finalized.  Some bugfixes in parser (non-existing cfg files
 	  behavior). Now gtk is the main issue to solve.
 
-2005-02-13 23:05  Petr Koloros <silk@sinus.cz>
+2005-02-13 23:05  Petr Koloros 
 
 	* configure.in, src/Makefile.am, src/interface_ncurses.c,
 	  src/interface_ncurses.h, src/pinger.c: Version 0.3:
@@ -395,19 +410,19 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  pinger engine) -> more accuracy times * files better structured
 	  to gain more readibility and modularity
 
-2005-02-06 21:31  Petr Koloros <silk@sinus.cz>
+2005-02-06 21:31  Petr Koloros 
 
 	* src/pinger.c: * Solved task with last_ping_ok time - localtime
 	  returns structure which is   valid only till next localtime
 	  usage.  * Solved ping delay times - ncurses version need the time
 	  set by set_actual_time   before process_icmp_reply is called
 
-2005-02-05 00:23  Petr Koloros <silk@sinus.cz>
+2005-02-05 00:23  Petr Koloros 
 
 	* configure.in: some more headers added due to shared memory usage
 	  and pinger version changed of course.
 
-2005-02-05 00:22  Petr Koloros <silk@sinus.cz>
+2005-02-05 00:22  Petr Koloros 
 
 	* src/: globals.h, ping.c, pinger.c: Shared memory management work,
 	  but some work still has to be done (critical events, ctrl-c,
@@ -415,23 +430,23 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  This is primary task now. After that gui can be cutted off into
 	  separate file and main program shoud use it more as module.
 
-2005-02-03 23:24  Petr Koloros <silk@sinus.cz>
+2005-02-03 23:24  Petr Koloros 
 
 	* src/pinger.c: Debugging prints removed. Prepared for splitting
 	  into two processes, display process and the pinger process. It is
 	  supposed to communicate through shared memory. Wish me luck,
 	  because I'm not experienced on this.
 
-2005-02-03 23:20  Petr Koloros <silk@sinus.cz>
+2005-02-03 23:20  Petr Koloros 
 
 	* src/pinger.c: Max delay check, FD_SET handling fixed (actually i
 	  mean changed until I know, that it is a right move).
 
-2005-02-03 23:16  Petr Koloros <silk@sinus.cz>
+2005-02-03 23:16  Petr Koloros 
 
 	* src/ping.c: Comments and some commands order fixing
 
-2004-12-20 02:20  Petr Koloros <silk@sinus.cz>
+2004-12-20 02:20  Petr Koloros 
 
 	* BUGS, NEWS, README, configure.in, po/cs.po, po/pinger.pot,
 	  src/globals.h, src/parse.c, src/parse.h, src/ping.c, src/ping.h,
@@ -441,88 +456,88 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  mode works OK, but needs right host placement when displayin
 	  different sets. GTK version doesn't support multiple sets yet.
 
-2004-05-28 15:29  Petr Koloros <silk@sinus.cz>
+2004-05-28 15:29  Petr Koloros 
 
 	* ChangeLog, src/pinger.c, src/timefunc.c, src/timefunc.h: time in
 	  upper bar
 
-2004-05-22 21:35  Petr Koloros <silk@sinus.cz>
+2004-05-22 21:35  Petr Koloros 
 
 	* ChangeLog, NEWS, configure.in, po/cs.po, po/pinger.pot,
 	  src/parse.c, src/parse.h, src/pinger.c: Release 0.22b, --conf
-	  <file> allows to specify another configuration file as requested
+	   allows to specify another configuration file as requested
 	  by Ivan Frano.
 
-2004-05-01 02:45  Petr Koloros <silk@sinus.cz>
+2004-05-01 02:45  Petr Koloros 
 
 	* BUGS, ChangeLog, NEWS, README, configure.in, po/cs.po,
 	  po/pinger.pot, src/globals.h, src/parse.c, src/ping.c,
 	  src/pinger.c, src/timefunc.h: Release 0.22: last ok timestamp
 	  added as requested Marco Lovise
 
-2004-03-15 00:19  Petr Koloros <silk@sinus.cz>
+2004-03-15 00:19  Petr Koloros 
 
 	* ChangeLog, NEWS, po/cs.po, po/pinger.pot: Release 0.21b. Previous
 	  free() bug fixed in print_info instead of show_status.
 
-2004-03-14 23:20  Petr Koloros <silk@sinus.cz>
+2004-03-14 23:20  Petr Koloros 
 
 	* BUGS, NEWS: version 0.21b updates
 
-2004-03-14 23:17  Petr Koloros <silk@sinus.cz>
+2004-03-14 23:17  Petr Koloros 
 
 	* configure.in, src/parse.c, src/ping.c, src/pinger.c: fixed
 	  invalid free in show_status/pinger.c; solved todo item:
 	  immediately quit if key is pressed
 
-2004-03-04 01:00  Petr Koloros <silk@sinus.cz>
+2004-03-04 01:00  Petr Koloros 
 
 	* Makefile.am, NEWS, README, po/cs.po, po/pinger.pot, src/pinger.c:
 	  Version 0.21, availability added and some minor fixes
 
-2004-03-03 22:21  Petr Koloros <silk@sinus.cz>
+2004-03-03 22:21  Petr Koloros 
 
 	* ChangeLog, configure.in, po/cs.po, po/pinger.pot, src/globals.h,
 	  src/parse.c, src/ping.c, src/pinger.c: Sent/recv column added,
 	  minor fixes
 
-2004-01-23 12:29  Petr Koloros <silk@sinus.cz>
+2004-01-23 12:29  Petr Koloros 
 
 	* ChangeLog, NEWS, README, configure.in: 0.2 release
 
-2003-09-11 09:29  Petr Koloros <silk@sinus.cz>
+2003-09-11 09:29  Petr Koloros 
 
 	* ChangeLog, po/cs.po, po/pinger.pot, src/ping.c: ping sq check
 
-2003-09-03 10:27  Petr Koloros <silk@sinus.cz>
+2003-09-03 10:27  Petr Koloros 
 
 	* Makefile.am, configure.in, src/pinger.c: 0.2beta release
 
-2003-09-02 09:03  Petr Koloros <silk@sinus.cz>
+2003-09-02 09:03  Petr Koloros 
 
 	* src/: globals.h, ping.c, pinger.c, timefunc.c, timefunc.h: time
 	  meassurement now in xx.yy ms (tens of microseconds)
 
-2003-08-26 12:43  Petr Koloros <silk@sinus.cz>
+2003-08-26 12:43  Petr Koloros 
 
 	* src/pinger.c: utf conversion in separate function, utferr default
 	  NULL fix
 
-2003-08-26 00:16  Petr Koloros <silk@sinus.cz>
+2003-08-26 00:16  Petr Koloros 
 
 	* src/pinger.c: src/pinger.c
 
-2003-08-25 20:21  Petr Koloros <silk@sinus.cz>
+2003-08-25 20:21  Petr Koloros 
 
 	* src/: ping.c, pinger.c: fixed calling of ncurses funtions on gtk
 	  quit and some minor ch.
 
-2003-08-25 20:20  Petr Koloros <silk@sinus.cz>
+2003-08-25 20:20  Petr Koloros 
 
 	* src/: timefunc.c, timefunc.h: one saved_tv variable for any
 	  purpose added
 
-2003-08-25 10:14  Petr Koloros <silk@sinus.cz>
+2003-08-25 10:14  Petr Koloros 
 
 	* AUTHORS, ChangeLog, Makefile.am, NEWS, README, autogen.sh,
 	  configure.in, src/Makefile.am, src/globals.h, src/parse.c,
@@ -530,133 +545,133 @@ Date:   Sat Aug 10 22:19:59 2013 +0200
 	  src/timefunc.c, src/timefunc.h: ncurses working, first buggy
 	  prerelease
 
-2003-08-24 20:39  Petr Koloros <silk@sinus.cz>
+2003-08-24 20:39  Petr Koloros 
 
 	* configure.in, src/globals.h: Changes to make pinger possible to
 	  compile on older systems.
 
-2003-08-17 17:07  Petr Koloros <silk@sinus.cz>
+2003-08-17 17:07  Petr Koloros 
 
 	* src/: Makefile.am, fake_gtk.h: fake_gtk added
 
-2003-08-17 16:58  Petr Koloros <silk@sinus.cz>
+2003-08-17 16:58  Petr Koloros 
 
 	* src/: globals.h, ping.c, pinger.c: ncurses working fine, nc+gtk
 	  mode fixed
 
-2003-08-17 16:30  Petr Koloros <silk@sinus.cz>
+2003-08-17 16:30  Petr Koloros 
 
 	* src/: ping.c, pinger.c: Woring ncurses
 
-2003-08-17 15:32  Petr Koloros <silk@sinus.cz>
+2003-08-17 15:32  Petr Koloros 
 
 	* src/: globals.h, parse.c, ping.c, ping.h, pinger.c: ncurses begin
 	  to work
 
-2003-08-17 14:25  Petr Koloros <silk@sinus.cz>
+2003-08-17 14:25  Petr Koloros 
 
 	* src/: globals.h, ping.c, ping.h, pinger.c: it should work but it
 	  doesn't :-)
 
-2003-08-17 05:46  Petr Koloros <silk@sinus.cz>
+2003-08-17 05:46  Petr Koloros 
 
 	* src/: ping.c, ping.h, pinger.c: First steps in ncurses
 
-2003-08-17 05:28  Petr Koloros <silk@sinus.cz>
+2003-08-17 05:28  Petr Koloros 
 
 	* configure.in, src/globals.h, src/pinger.c: begining of ncurses
 	  initialization
 
-2003-08-16 21:21  Petr Koloros <silk@sinus.cz>
+2003-08-16 21:21  Petr Koloros 
 
 	* src/: Makefile.am, globals.h, ping.c, pinger.c: prepared for
 	  curses mode, but not yet functional
 
-2003-08-16 17:06  Petr Koloros <silk@sinus.cz>
+2003-08-16 17:06  Petr Koloros 
 
 	* src/pinger.c: some minor message changes
 
-2003-05-27 02:27  Petr Koloros <silk@sinus.cz>
+2003-05-27 02:27  Petr Koloros 
 
 	* autogen.sh: aclocal support
 
-2003-05-27 01:53  Petr Koloros <silk@sinus.cz>
+2003-05-27 01:53  Petr Koloros 
 
 	* README: some more README
 
-2003-02-21 00:17  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:17  Petr Koloros 
 
 	* src/Makefile.am: include globals.h and chmod hook
 
-2003-02-21 00:16  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:16  Petr Koloros 
 
 	* src/todo: some news :-)
 
-2003-02-21 00:14  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:14  Petr Koloros 
 
 	* src/pinger.c: suid part added and version msg fixed
 
-2003-02-21 00:14  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:14  Petr Koloros 
 
 	* src/ping.c: Host timing support
 
-2003-02-21 00:13  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:13  Petr Koloros 
 
 	* src/: parse.h, ping.h, timefunc.c, timefunc.h: GPL msg
 
-2003-02-21 00:12  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:12  Petr Koloros 
 
 	* src/parse.c: Improved parser, host timing support, removed suid
 	  removal part
 
-2003-02-21 00:11  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:11  Petr Koloros 
 
 	* src/globals.h: host timing support
 
-2003-02-21 00:10  Petr Koloros <silk@sinus.cz>
+2003-02-21 00:10  Petr Koloros 
 
 	* configure.in: better check and final msg
 
-2002-09-07 00:12  Petr Koloros <silk@sinus.cz>
+2002-09-07 00:12  Petr Koloros 
 
 	* src/pinger.h: pinger.h removed, because all in pinger.h can be in
 	  pinger.c what is the main file of the whole project. So this file
 	  doesn't need any header, any file in which offer its functions
 	  etc...
 
-2002-09-07 00:09  Petr Koloros <silk@sinus.cz>
+2002-09-07 00:09  Petr Koloros 
 
 	* src/: ping.c, ping.h, timefunc.c, timefunc.h: New files came from
 	  one monolitic pinger when splitted
 
-2002-09-07 00:07  Petr Koloros <silk@sinus.cz>
+2002-09-07 00:07  Petr Koloros 
 
 	* src/: Makefile.am, globals.h, pinger.c, pinger.h, todo: Files are
 	  now splited into several parts. This seems to be final structure
 	  now.
 
-2002-09-06 15:48  Petr Koloros <silk@sinus.cz>
+2002-09-06 15:48  Petr Koloros 
 
 	* autogen.sh: generate configure Makefiles .. etc.
 
-2002-09-06 15:03  Petr Koloros <silk@sinus.cz>
+2002-09-06 15:03  Petr Koloros 
 
 	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, NEWS, README,
 	  configure.in, src/Makefile.am, src/globals.h, src/parse.c,
 	  src/parse.h, src/pinger.c, src/pinger.h, src/todo: Autotools
 	  version with split sources
 
-2002-09-06 15:03  Petr Koloros <silk@sinus.cz>
+2002-09-06 15:03  Petr Koloros 
 
 	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, NEWS, README,
 	  configure.in, src/Makefile.am, src/globals.h, src/parse.c,
 	  src/parse.h, src/pinger.h, src/todo: Initial revision
 
-2002-09-06 03:18  Petr Koloros <silk@sinus.cz>
+2002-09-06 03:18  Petr Koloros 
 
 	* src/pinger.c: First working version
 
-2002-09-06 03:18  Petr Koloros <silk@sinus.cz>
+2002-09-06 03:18  Petr Koloros 
 
 	* src/pinger.c: Initial revision
 

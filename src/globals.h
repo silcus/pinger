@@ -40,8 +40,8 @@
 #define _(Text) (Text)
 #define N_(Text) Text
 #undef bindtextdomain
-#define bindtextdomain(Domain, Directory) /* empty */
-#undef textdomain(Domain) /* empty */
+#define bindtextdomain(Domain, Directory)   /* empty */
+#undef textdomain(Domain)       /* empty */
 #endif
 
 #ifndef TRUE
@@ -81,64 +81,69 @@
 #define MAX_CFG_FILES 100
 
 /* info about host */
-typedef struct host_data_t {
-  int id;          /* nr of host, req. for indexing host list */
-  int id_in_set;      /* id inside the set. Good for displaying order, etc. */
-  char name[MAX_NAME_LEN + 1];      /* ip description */
-  char domain_name[MAX_DNAME_LEN + 1];  /* domain name (being resolved before pinging) */
-  struct in_addr addr;  /* ip address */
-  int rawfd;        /* socket fd */
-  struct timeval start;  /* time of sending last echo */
-  struct timeval lastok_tv;   /* timestamp of last ok echo */
-  int status;        /* status of host, online, without reply, ... */
-  double delay;             /* ping latency in miliseconds */
-  u_int last_seq_sent;    /* sequence nr. of last packet sent */
-  u_int last_seq_recv;    /* sequence nr. of last packet received */
-  unsigned long long nr_sent;        /* number of send and received */
-  unsigned long long nr_recv;
-  int ok_delay;      /* time in ms, after we send next echo when OK (sucessfuly ping - ECHO REPLY) */
-  int noreply_delay;    /* time in ms, after we send next echo when NO_REPLY */
-  int long_delay;    /* time in ms, after which host is marked as with long delay */
-  int set_nr;       /* number of set in which host is */
-  int arp;          /* indicate use of ARP query instead of ICMP ECHO */
-  struct host_data_t *next;
-  struct host_data_t *like; /* when resolved same IP like other host has, this points
-                               to the other host. This host is not used for pinging while
-                               results from other host are used. */
-  struct timeval last_status_change; /* holds time of last host status change */
-  int log_if_status_last;   /* log host change if change last at least this long (seconds) */
-  int prev_logged_status;          /* previous logged status */
-  int sleep;                /* host can do pinging or sleeping and waiting for next ping cycle */
+typedef struct host_data_t
+{
+    int id;                     /* nr of host, req. for indexing host list */
+    int id_in_set;              /* id inside the set. Good for displaying order, etc. */
+    char name[MAX_NAME_LEN + 1];    /* ip description */
+    char domain_name[MAX_DNAME_LEN + 1];    /* domain name (being resolved before pinging) */
+    struct in_addr addr;        /* ip address */
+    int rawfd;                  /* socket fd */
+    struct timeval start;       /* time of sending last echo */
+    struct timeval lastok_tv;   /* timestamp of last ok echo */
+    int status;                 /* status of host, online, without reply, ... */
+    double delay;               /* ping latency in miliseconds */
+    u_int last_seq_sent;        /* sequence nr. of last packet sent */
+    u_int last_seq_recv;        /* sequence nr. of last packet received */
+    unsigned long long nr_sent; /* number of send and received */
+    unsigned long long nr_recv;
+    int ok_delay;               /* time in ms, after we send next echo when OK (sucessfuly ping - ECHO REPLY) */
+    int noreply_delay;          /* time in ms, after we send next echo when NO_REPLY */
+    int long_delay;             /* time in ms, after which host is marked as with long delay */
+    int set_nr;                 /* number of set in which host is */
+    int arp;                    /* indicate use of ARP query instead of ICMP ECHO */
+    struct host_data_t *next;
+    struct host_data_t *like;   /* when resolved same IP like other host has, this points
+                                   to the other host. This host is not used for pinging while
+                                   results from other host are used. */
+    struct timeval last_status_change;  /* holds time of last host status change */
+    int log_if_status_last;     /* log host change if change last at least this long (seconds) */
+    int prev_logged_status;     /* previous logged status */
+    int sleep;                  /* host can do pinging or sleeping and waiting for next ping cycle */
 } host_data;
 
 /* filelist struct to hold multiple configuration files if occur */
-typedef struct titlestruct {
-  char *title;  /* title of set of hosts */
-  int nr;       /* number of ... */
-  int refresh_int; /* GUI refresh interval in miliseconds */
-  struct titlestruct *next;
+typedef struct titlestruct
+{
+    char *title;                /* title of set of hosts */
+    int nr;                     /* number of ... */
+    int refresh_int;            /* GUI refresh interval in miliseconds */
+    struct titlestruct *next;
 } titlelist;
 
 /* info about all hosts; this is useful for carrying all hosts in one pointer
  * (of this structure :)) */
-typedef struct {
-  int host_max;
-  titlelist *titles;
-  host_data *host_info;
-  int icmp_data_len;
-  int icmp_pkt_len;
-  unsigned char *icmp_pkt;
+typedef struct
+{
+    int host_max;
+    titlelist *titles;
+    host_data *host_info;
+    int icmp_data_len;
+    int icmp_pkt_len;
+    unsigned char *icmp_pkt;
 } hosts_data;
 
-enum mode_enum {
-  NCURSES,
-  GTK,
+enum mode_enum
+{
+    NCURSES,
+    GTK,
 };
 
 /* filelist struct to hold multiple configuration files if occur */
-typedef struct flstruct {
-  char *filename;
-  struct flstruct *next;
+typedef struct flstruct
+{
+    char *filename;
+    struct flstruct *next;
 } filelist;
 
 /* options, which can be configured from configuration file and their default vaules */
@@ -168,5 +173,5 @@ EXTERN int mode;
 EXTERN unsigned int quiet;
 #endif
 
-char * get_ip_str(struct in_addr addr);
-void set_virt_host(host_data *host, host_data *virt_host);
+char *get_ip_str(struct in_addr addr);
+void set_virt_host(host_data * host, host_data * virt_host);

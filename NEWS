@@ -1,3 +1,6 @@
+Version 0.33:
+  * GTK+ 3 support
+
 Version 0.32f:
   * Fixed compilation without GTK
   * Fixed buffer overflow on long runs (rcv/snt numbers)

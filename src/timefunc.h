@@ -21,26 +21,25 @@
 #include <time.h>
 
 /* Get actual time to timeval struct */
-void get_actual_time (struct timeval * act_time);
+void get_actual_time(struct timeval *act_time);
 
 /* Convert miliseconds to timeval structure */
-void ms_to_tv (int ms, struct timeval *tv);
+void ms_to_tv(int ms, struct timeval *tv);
 
 /* Convert timeval structure to miliseconds */
-int tv_to_ms (const struct timeval *tv);
+int tv_to_ms(const struct timeval *tv);
 
 /* Timeval struct saved - this can be used for any purposes */
 extern struct timeval saved_tv;
 
 /* Subtract 2 timeval structs:  out = out - in.  Out is assumed to
  * be >= in. */
-void tvsub (struct timeval *out, struct timeval *in);
+void tvsub(struct timeval *out, struct timeval *in);
 
 /* get current time str (HH:MM:SS) into time_str. Time can be specified in
  * *time. If time is NULL, actual time is used */
-char * get_currtime_str(struct timeval *logtime, char *time_str);
+char *get_currtime_str(struct timeval *logtime, char *time_str);
 
 /* get current date and time str (YYYY:MM:DD HH:MM:SS) into timedate_str Time
  * can be specified in *time. If time is NULL, actual time is used*/
-char * get_currdatetime_str(struct timeval *logtime, char *datetime_str);
-
+char *get_currdatetime_str(struct timeval *logtime, char *datetime_str);

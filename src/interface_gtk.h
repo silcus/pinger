@@ -16,7 +16,8 @@
 extern GtkWidget *list;
 */
 /* interface init */
-void gtk_interface_init(int *argc, char **argv[], char *title, hosts_data *hosts);
+void gtk_interface_init(int *argc, char **argv[], char *title,
+                        hosts_data * hosts);
 
 /* interface done */
 void gtk_interface_done(char *error_str);
@@ -24,5 +25,4 @@ void gtk_interface_done(char *error_str);
 /* get single host status and display it */
 int gtk_show_status(host_data * host);
 
-void gtk_gui_loop(hosts_data *hosts, int *stop_loop);
-
+void gtk_gui_loop(hosts_data * hosts, int *stop_loop);

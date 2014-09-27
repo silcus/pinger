@@ -6,137 +6,138 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pinger 0.31b \n"
 "Report-Msgid-Bugs-To: silk@sinus.cz\n"
-"POT-Creation-Date: 2014-07-27 11:18+0200\n"
+"POT-Creation-Date: 2014-09-27 12:03+0200\n"
 "PO-Revision-Date: 2006-03-11 13:14+0100\n"
 "Last-Translator: Tomasz Chilinski <chilek@chilan.com>\n"
 "Language-Team: Tomasz Chilinski <chilek@chilan.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/parse.c:35
+#: src/parse.c:36
 msgid "Incomplete line"
 msgstr "Niekompletna zawarto¶æ wiersza"
 
-#: src/parse.c:236
+#: src/parse.c:268
 msgid "Value is lower than limit. Setting to minimum value."
 msgstr "Warto¶æ mniejsza ni¿ dopuszczalny limit. Przyjmujê warto¶æ minimaln±."
 
-#: src/parse.c:240
+#: src/parse.c:273
 msgid "Value is higher than limit. Setting to maximum value."
 msgstr "Warto¶æ wiêksza ni¿ dopuszczalny limit. Przyjmujê warto¶æ maksymaln±."
 
-#: src/parse.c:314
+#: src/parse.c:350
 msgid "Cannot get environment variable"
 msgstr "Nie mo¿na odczytaæ warto¶ci zmiennej ¶rodowiskowej"
 
-#: src/parse.c:331
+#: src/parse.c:367
 msgid "Reading configuration file"
 msgstr "Odczytywanie pliku konfiguracyjnego"
 
-#: src/parse.c:336
+#: src/parse.c:372
 msgid "Cannot open config file"
 msgstr "Nie mozna otworzyæ pliku konfiguracyjnego"
 
-#: src/parse.c:343
+#: src/parse.c:383
 msgid "Creating new one in your home directory ..."
 msgstr "Tworzenie nowego pliku w Twoim katalogu domowym ..."
 
-#: src/parse.c:346
+#: src/parse.c:386
 msgid "Cannot create file"
 msgstr "Nie mo¿na utworzyæ pliku konfiguracyjnego"
 
-#: src/parse.c:346
+#: src/parse.c:387
 msgid "Please check your create privileges for this directory!"
 msgstr "Proszê sprawdziæ swoje uprawienia odpowiadaj±ce temu katalogowi!"
 
-#: src/parse.c:349
+#: src/parse.c:390
 msgid "Pinger configuration file"
 msgstr "Plik konfiguracyjny pingera"
 
-#: src/parse.c:350
+#: src/parse.c:393
 msgid "Description"
 msgstr "Opis"
 
-#: src/parse.c:351
+#: src/parse.c:395
 msgid "when ping successful, wait this time before sending next ping request."
 msgstr ""
 "gdy wykonanie pinga zakoñczy siê powodzeniem, odczekuj podany okres czasu "
 "zanim zostanie wys³any nastêpny ping."
 
-#: src/parse.c:352
+#: src/parse.c:397
 msgid "when ping failed, wait this time before sending next ping request."
 msgstr ""
 "gdy wykonanie pinga zakoñczy siê niepowodzeniem, odczekuj podany okres czasu "
 "zanim zostanie wys³any nastêpny ping."
 
-#: src/parse.c:353
+#: src/parse.c:399
 msgid "Also when reply exceeds this interval, host is marked as offline."
 msgstr ""
 "Je¶li odpowied¼ nie nadejdzie w ci±gu okre¶lonego interwa³u czasowego, host "
 "jest oznaczany jako 'wy³±czony'."
 
-#: src/parse.c:354
+#: src/parse.c:401
 msgid "delay of reply after which is host marked as delayed."
 msgstr "czas odpowiedzi po którym host jest oznaczany jako opó¼niony."
 
-#: src/parse.c:355
+#: src/parse.c:403
 msgid ""
 "Indicate that host will be pinged using ARP request instead of ICMP ECHO."
 msgstr "Host bêdzie pingowany z u¿yciem ¿±dañ ARP zamiast ¿±dañ echa ICMP."
 
-#: src/parse.c:356
+#: src/parse.c:405
 msgid "Indicate that host will be logged in the host log."
 msgstr ""
 "Zmiany stanu hosta bêd± zapisywane w dzienniku zdarzeñ dostêpno¶ci hostów."
 
-#: src/parse.c:357
+#: src/parse.c:407
 msgid "Indicate that host will not be logged in the host log."
 msgstr ""
 "Zmiany stanu hosta nie bêd± zapisywane w dzienniku zdarzeñ dostêpno¶ci "
 "hostów."
 
-#: src/parse.c:358
+#: src/parse.c:409
 msgid "Logging - if host log specified, every hosts is logged."
 msgstr ""
 "Logowanie - je¶li okre¶lono dziennik zdarzeñ dostêpno¶ci hostów, wszystkie "
 "stany hostów bêd± w nim zapisywane."
 
-#: src/parse.c:359
+#: src/parse.c:411
 msgid "If any of them is marked as nolog, it won't be logged."
 msgstr ""
 "Je¶li którykolwiek z nich zostanie oznaczony poprzez nolog, nie bêd± "
 "zapisywane jego zmiany stanu."
 
-#: src/parse.c:360
+#: src/parse.c:413
 msgid "If there are only 'log' at some hosts, these will be logged"
 msgstr ""
 "Je¶li 'log' ustawiono tylko w przypadku wybranych hostów, w dzienniku bêd± "
 "zapisywane informacje odpowiadaj±ce tym hostom"
 
-#: src/parse.c:361
+#: src/parse.c:415
 msgid "while the rest won't. See README for more."
 msgstr "zatímco u zbytku nikoliv. Wiêcej informacji w pliku README."
 
-#: src/parse.c:364
+#: src/parse.c:418
 msgid "Display refresh interval."
 msgstr "Interwa³ czasu po którym nastêpuje od¶wie¿enie ekranu."
 
-#: src/parse.c:366
+#: src/parse.c:421
 msgid "Successful pings' next request interval."
 msgstr ""
 "Interwa³ czasu po którym zostanie wykonany nastêpny ping, o ile poprzedni "
 "ping zakoñczy³ siê sukcesem."
 
-#: src/parse.c:368
+#: src/parse.c:424
 msgid "Interval, in which if there is no reply,"
 msgstr "Interwa³ czasu w którym nie nadejdzie odpowied¼,"
 
-#: src/parse.c:369
+#: src/parse.c:426
 msgid "host is marked as offline and new request is sent."
 msgstr "host jest oznaczony jako 'niedostêpny' i zostaje wys³ane nowe ¿±danie."
 
-#: src/parse.c:371
+#: src/parse.c:429
 msgid ""
 "Delay of reply after which is host marked as delayed, if not specified in IP "
 "line."
@@ -144,88 +145,88 @@ msgstr ""
 "Czas odpowiedzi po którym host jest oznaczany jako opó¼niony, o ile nie "
 "okre¶lono inaczej w wierszu IP."
 
-#: src/parse.c:373
+#: src/parse.c:432
 msgid "Hosts specified only by domain names are resolved every 10 minutes."
 msgstr ""
 "W przypadku hostów, którym okre¶lono wy³±cznie nazwy domenowe, ich nazwy "
 "rozwi±zywane s± co 10 minut."
 
-#: src/parse.c:374
+#: src/parse.c:434
 msgid "Specify other interval in seconds here if required. -1 = disable."
 msgstr ""
 "Je¶li potrzebujesz okre¶l inny interwa³ czasowy w sekundach, -1 = wy³±czenie."
 
-#: src/parse.c:376
+#: src/parse.c:437
 msgid "Filename where to log errors."
 msgstr "Nazwa pliku w którym maj± byæ zapisywane informacje o b³êdach."
 
-#: src/parse.c:378
+#: src/parse.c:440
 msgid "Filename where to log host status changes."
 msgstr ""
 "Nazwa pliku w którym maj± byæ zapisywane informacje o zmianach stanu hostów."
 
-#: src/parse.c:380
+#: src/parse.c:443
 msgid "Minimum duration of the host status to log the change (in seconds)."
 msgstr ""
 "Minimalny czas trwania stanu hosta po którym informacja o zmianie stanu jest "
 "zapisywania w dzienniku zdarzeñ (w sekundách)."
 
-#: src/parse.c:381
+#: src/parse.c:445
 msgid "-1 = disable logging, 0 = log all changes."
 msgstr "-1 = wy³±czenie zapisu zmian, 0 = w³±czenie zapisu wszystkich zmian."
 
-#: src/parse.c:383
+#: src/parse.c:448
 msgid "ICMP packet size (see 'man ping' for details)."
 msgstr "Rozmiar pakietu ICMP (wiêcej informacji - 'man ping')."
 
 # c-format
-#: src/parse.c:385
+#: src/parse.c:451
 msgid "Title of this set of hosts. Character"
 msgstr "Nazwa zestawu hostów. Znak"
 
-#: src/parse.c:385
+#: src/parse.c:452
 msgid "is not allowed here!"
 msgstr "nie jest dozwolony w tym miejscu!"
 
-#: src/parse.c:395
+#: src/parse.c:463
 msgid "Cannot set configuration file owner to current user:"
 msgstr ""
 "Niemo¿liwe ustawienie bie¿±cego u¿ytkownika w³a¶cicielem pliku "
 "konfiguracyjnego:"
 
-#: src/parse.c:398
+#: src/parse.c:468
 msgid "Cannot reopen just created config file!"
 msgstr "Niemo¿liwe otworzenie w³a¶nie utworzonego pliku konfiguracyjnego!"
 
-#: src/parse.c:401
+#: src/parse.c:471
 msgid "Config file created successfuly"
 msgstr "Plik konfiguracyjny zosta³ utworzony"
 
-#: src/parse.c:403
+#: src/parse.c:475
 msgid "Using file"
 msgstr "U¿ycie pliku"
 
-#: src/parse.c:423
+#: src/parse.c:496
 msgid "found options section"
 msgstr "znaleziono sekcjê 'options'"
 
-#: src/parse.c:426
+#: src/parse.c:499
 msgid "found hosts section"
 msgstr "znaleziono sekcjê 'hosts'"
 
-#: src/parse.c:430
+#: src/parse.c:504
 msgid "Something uncommented found before OPTIONS section!"
 msgstr "Znaleziono niezakomentowany ci±g znaków przed sekcj± OPTIONS!"
 
-#: src/parse.c:443
+#: src/parse.c:517
 msgid "IP/domain name"
 msgstr "IP/nazwa domenowa"
 
-#: src/parse.c:446
+#: src/parse.c:522
 msgid "Invalid IP/domain name"
 msgstr "Nieprawid³owy IP/nazwa domenowa"
 
-#: src/parse.c:450
+#: src/parse.c:527
 msgid ""
 "Domain name is too long! Update this program source or check if domain name "
 "is OK!"
@@ -233,273 +234,273 @@ msgstr ""
 "Zbyt d³uga nazwa domenowa! Zmodyfikuj ¼ród³a programu lub sprawd¼ czy nazwa "
 "domenowa jest w³a¶ciwa!"
 
-#: src/parse.c:478
+#: src/parse.c:561
 msgid "is already initialized."
 msgstr "jest ju¿ zainicjalizowany"
 
-#: src/parse.c:504
+#: src/parse.c:589
 msgid "Invalid host"
 msgstr "Niepoprawny host"
 
-#: src/parse.c:516
+#: src/parse.c:604
 msgid "Found name"
 msgstr "Znaleziono nazwê"
 
-#: src/parse.c:519
+#: src/parse.c:607
 msgid "Setting ok delay"
 msgstr "Ustawienie opó¼nienia dla stanu 'ok'"
 
-#: src/parse.c:523
+#: src/parse.c:613
 msgid "Setting noreply delay"
 msgstr "Ustawienie opó¼nienia dla stanu 'wy³±czony'"
 
-#: src/parse.c:527
+#: src/parse.c:618
 msgid "Setting long delay"
 msgstr "Ustawienie d³ugiego opó¼nienia"
 
-#: src/parse.c:531
+#: src/parse.c:624
 msgid "This host will use ARP request instead of ICMP ECHO"
 msgstr ""
 "W przypadku tego hosta bêd± u¿ywane ¿±dania ARP zamiast ¿±dañ ICMP ECHO"
 
-#: src/parse.c:536
+#: src/parse.c:631
 msgid "This host will not be logged in host log"
 msgstr ""
 "Zmiany dotycz±ce tego hosta nie bêd± zapisywane w dzienniku zdarzeñ zmian"
 
-#: src/parse.c:539
+#: src/parse.c:636
 msgid "This host will be logged in host log"
 msgstr "Zmiany dotycz±ce tego hosta bêd± zapisywane w dzienniku zdarzeñ zmian"
 
-#: src/parse.c:545
+#: src/parse.c:644
 msgid "Adding host"
 msgstr "Dodanie hosta"
 
-#: src/parse.c:587
+#: src/parse.c:691
 msgid "Initializing socket"
 msgstr "Inicjalizowanie gniazda"
 
-#: src/parse.c:587
+#: src/parse.c:693
 msgid "Make sure you have root privileges or suid bit set!"
 msgstr ""
 "Upewnij siê, ¿e posiadasz uprawnienia roota lub bit suid zosta³ ustawiony!"
 
-#: src/parse.c:592
+#: src/parse.c:699
 msgid "Got free socket less than 2!"
 msgstr "Zwolniono gniazdo o identyfikatorze mniejszym od 2!"
 
-#: src/parse.c:600
+#: src/parse.c:707
 msgid "Name"
 msgstr "Nazwa"
 
-#: src/parse.c:600
+#: src/parse.c:707
 msgid "value"
 msgstr "warto¶æ"
 
-#: src/parse.c:610
+#: src/parse.c:721
 msgid "Setting dns check to new value"
 msgstr "Ustawienie okresu odpytywania dns na now± warto¶æ"
 
-#: src/parse.c:612 src/parse.c:617 src/parse.c:629
+#: src/parse.c:726 src/parse.c:736 src/parse.c:757
 msgid "is out of range"
 msgstr "przekracza dozwolony zakres"
 
-#: src/parse.c:613 src/parse.c:618 src/parse.c:630
+#: src/parse.c:728 src/parse.c:738 src/parse.c:760
 msgid "Setting default value of"
 msgstr "Ustawienie domy¶lnej warto¶ci"
 
-#: src/parse.c:622
+#: src/parse.c:744
 msgid "Setting logging to log every host status change"
 msgstr ""
 "Ustawienie dziennika zdarzeñ tak, aby by³y zapisywane zmiany stanu "
 "wszystkich hostów"
 
-#: src/parse.c:624
+#: src/parse.c:747
 msgid "Disabling host status logging"
 msgstr "Wy³±czenie zapisywania zmian stanu hostów w dzienniku"
 
-#: src/parse.c:626
+#: src/parse.c:750
 msgid "Setting logging when host status last longer than value of (seconds)"
 msgstr ""
 "Ustawienie dziennika zdarzeñ tak, aby by³y zapisywane informacje o stanie "
 "trwaj±cym d³u¿ej ni¿ warto¶æ (w sekundach)"
 
-#: src/parse.c:633
+#: src/parse.c:765
 msgid "Setting ICMP packet size to value"
 msgstr "Ustawienie rozmiaru pakietu ICMP na warto¶æ"
 
-#: src/parse.c:637
+#: src/parse.c:771
 msgid "Value -1 is not allowed here"
 msgstr "Warto¶æ -1 nie jest dozwolona"
 
-#: src/parse.c:640
+#: src/parse.c:775
 msgid "Setting refresh interval to new value"
 msgstr "Ustawienie czasu od¶wie¿ania informacji o hostach na now± warto¶æ"
 
-#: src/parse.c:643
+#: src/parse.c:780
 msgid "Setting noreply interval to new value"
 msgstr ""
 "Ustawienie czasu po którym host bêdzie traktowany jako 'wy³±czony' na now± "
 "warto¶æ"
 
-#: src/parse.c:646
+#: src/parse.c:785
 msgid "Setting delay between pings to new value"
 msgstr "Ustawienie opó¼nienia pomiêdzy pingami na now± warto¶æ"
 
-#: src/parse.c:649
+#: src/parse.c:790
 msgid "Setting long delay to new value"
 msgstr "Ustawienie nowego 'd³ugiego' opó¼nienia na now± warto¶æ"
 
-#: src/parse.c:652
+#: src/parse.c:796
 msgid "Cannot evaluate OPTIONS value of"
 msgstr "Niemo¿liwe przetworzenie warto¶ci sekcji OPTIONS"
 
-#: src/parse.c:655
+#: src/parse.c:800
 msgid "Setting title to new value"
 msgstr "Ustawienie tytu³u na now± warto¶æ"
 
-#: src/parse.c:661
+#: src/parse.c:810
 msgid "Realloc failed"
 msgstr ""
 
-#: src/parse.c:669
+#: src/parse.c:821
 msgid "Setting error log to new value"
 msgstr ""
 "Ustawienie dziennika zdarzeñ przechowuj±cego informacje o b³êdach na now± "
 "warto¶æ"
 
-#: src/parse.c:670
+#: src/parse.c:824
 msgid "Error log"
 msgstr "Dziennik zdarzeñ informacji o b³êdach"
 
-#: src/parse.c:672
+#: src/parse.c:828
 msgid "Setting host log to new value"
 msgstr ""
 "Ustawienie dziennika zdarzeñ przechowuj±cego informacje o zmianach stanu "
 "hostów na now± warto¶æ"
 
-#: src/parse.c:673
+#: src/parse.c:832
 msgid "Host status change log"
 msgstr "Dziennik zdarzeñ informacji o zmianach stanu hostów"
 
-#: src/parse.c:677
+#: src/parse.c:838
 msgid "Cannot open file"
 msgstr "Niemo¿liwe otworzenie pliku"
 
-#: src/parse.c:704
+#: src/parse.c:872
 msgid "Only log disabled host found. The rest of the hosts will be logged."
 msgstr ""
 "Znaleziono jedynie hosty w przypadku których maj± nie byæ zapisywane "
 "informacje o zmianach stanu w dzienniku zdarzeñ. Informacje o pozosta³ych "
 "hostach bêd± zapisywane w dzienniku."
 
-#: src/parse.c:709
+#: src/parse.c:878
 msgid "Only log enabled host found. The rest of the hosts will not be logged."
 msgstr ""
 "Znaleziono jedynie hosty w przypadku których maj± byæ zapisywane informacje "
 "o zmianach stanu w dzienniku zdarzeñ. Informacje o pozosta³ych hostach nie "
 "bêd± zapisywane w dzienniku."
 
-#: src/parse.c:714
+#: src/parse.c:883
 msgid "Log and nolog hosts found."
 msgstr ""
 "Znaleziono hosty w przypadku których maj± byæ zapisywane lub nie zapisywane "
 "informacje o zmianach stanu w dzienniku zdarzeñ."
 
-#: src/parse.c:716
+#: src/parse.c:886
 msgid "Not specified hosts will use default setting:"
 msgstr ""
 "W przypadku hostów, które nie zosta³y okre¶lone, zostan± u¿yte ustawienia "
 "domy¶lne:"
 
-#: src/parse.c:718
+#: src/parse.c:889
 msgid "Not specified hosts will use gobal setting:"
 msgstr ""
 "W przypadku hostów, które nie zosta³y okre¶lone, zostan± u¿yte ustawienia "
 "globalne:"
 
-#: src/parse.c:721
+#: src/parse.c:892
 msgid "do not log."
 msgstr "nie zapisuj zmian."
 
-#: src/parse.c:723
+#: src/parse.c:894
 msgid "log (every change)."
 msgstr "zapisuj (wszystkie zmiany)."
 
-#: src/parse.c:725
+#: src/parse.c:896
 msgid "log"
 msgstr "zapisuj"
 
-#: src/parse.c:725
+#: src/parse.c:897
 msgid "with status last longer than"
 msgstr "ze stanem trwaj±cym d³u¿ej ni¿"
 
-#: src/parse.c:726
+#: src/parse.c:898
 msgid "seconds"
 msgstr "sekund"
 
-#: src/parse.c:727
+#: src/parse.c:900
 msgid "unknown setting"
 msgstr "nieznane ustawienie"
 
-#: src/parse.c:797
+#: src/parse.c:980
 msgid "Warning: maximum allowed configuration files exceeded!"
 msgstr ""
 "Ostrze¿enie: przekroczono maksymaln± dozwolon± liczbê plików "
 "konfiguracyjnych!"
 
-#: src/parse.c:807
+#: src/parse.c:991
 msgid "Maximum count of hosts reached"
 msgstr "Osi±gniêto maksymaln± liczbê hostów"
 
-#: src/parse.c:808
+#: src/parse.c:992
 msgid "Modify your copy of pinger if you want more hosts (requires recompile)."
 msgstr ""
 "Je¶li chcesz u¿ywaæ wiêkszej liczby hostów, wykonaj rekompilacjê pingera."
 
-#: src/parse.c:812
+#: src/parse.c:996
 msgid "Total hosts on list"
 msgstr "Ca³kotiwa liczba hostów na li¶cie"
 
-#: src/ping.c:72 src/interface_gtk.c:258
+#: src/ping.c:74 src/interface_gtk.c:288
 msgid "Online"
 msgstr "W³±czony"
 
-#: src/ping.c:74 src/interface_gtk.c:278 src/interface_gtk.c:335
+#: src/ping.c:77 src/interface_gtk.c:306 src/interface_gtk.c:364
 msgid "Offline"
 msgstr "Wy³±czony"
 
-#: src/ping.c:76
+#: src/ping.c:80
 msgid "Unreachable"
 msgstr "Sieæ niedostêpna"
 
-#: src/ping.c:78 src/interface_gtk.c:268
+#: src/ping.c:83 src/interface_gtk.c:297
 msgid "Delayed"
 msgstr "Opó¼niony"
 
-#: src/ping.c:80
+#: src/ping.c:86
 msgid "No valid answer"
 msgstr "Niepoprawna odpowied¼"
 
-#: src/ping.c:82
+#: src/ping.c:89
 msgid "Unresolved"
 msgstr "Nierozwi±zany"
 
-#: src/ping.c:85
+#: src/ping.c:92
 #, fuzzy
 msgid "Unknown status"
 msgstr "nieznane ustawienie"
 
-#: src/ping.c:99 src/ping.c:105 src/interface_ncurses.c:329
-#: src/interface_gtk.c:362
+#: src/ping.c:106 src/ping.c:113 src/interface_ncurses.c:359
+#: src/interface_gtk.c:392
 msgid "Host"
 msgstr "Host"
 
-#: src/ping.c:99 src/ping.c:105
+#: src/ping.c:107 src/ping.c:114
 msgid "changed status to:"
 msgstr "stan zmieniony na:"
 
-#: src/ping.c:233
+#: src/ping.c:257
 msgid ""
 "This packet is ARP and processed via process_icmp. It's definitely wrong. "
 "Host"
@@ -507,39 +508,39 @@ msgstr ""
 "Pakiet jest pakietem typu ARP a zostanie przetworzony przez process_icmp - "
 "zdecydowanie niepoprawne zachowanie. Host"
 
-#: src/ping.c:247 src/ping.c:261
+#: src/ping.c:276 src/ping.c:293
 msgid "Packet too short!"
 msgstr "Pakiet zbyt krótki!"
 
-#: src/ping.c:253
+#: src/ping.c:283
 msgid "Wrong IP version!"
 msgstr "Z³a wersja IP!"
 
-#: src/ping.c:257
+#: src/ping.c:288
 msgid "Packet is not ICMP!"
 msgstr "Pakiet nie jest pakietem ICMP!"
 
-#: src/ping.c:348
+#: src/ping.c:385
 msgid "Releasing socket for"
 msgstr "Zwalnianie gniazda dla"
 
-#: src/ping.c:350
+#: src/ping.c:387
 msgid "(unresolved host)"
 msgstr "(nierozwi±zany host)"
 
-#: src/ping.c:353
+#: src/ping.c:392
 msgid "Cannot release raw socket for ip"
 msgstr "Niemo¿liwe zwolnienie gniazda typu raw odpowiadaj±cego protoko³owi ip"
 
-#: src/pinger.c:76 src/log.c:86 src/log.c:107
+#: src/pinger.c:78 src/log.c:90 src/log.c:113
 msgid "Pinger version"
 msgstr "Pinger wersja"
 
-#: src/pinger.c:131 src/interface_ncurses.c:448
+#: src/pinger.c:135 src/interface_ncurses.c:487
 msgid "Cannot select:"
 msgstr "Niemo¿liwy wybór:"
 
-#: src/pinger.c:208
+#: src/pinger.c:220
 msgid ""
 "Not running with root privileges, make sure this application has SUID bit "
 "set."
@@ -547,43 +548,43 @@ msgstr ""
 "Uruchomienie na prawach roota jest niemo¿liwe. Sprawd¼ czy program posiada "
 "ustawiony bit SUID."
 
-#: src/pinger.c:212 src/pinger.c:360 src/pinger.c:366
+#: src/pinger.c:224 src/pinger.c:396 src/pinger.c:403
 msgid "Cannot restore back user's privileges, quitting."
 msgstr "Niemo¿liwe przywrócenie uprawieñ u¿ytkownika - koñczê dzia³anie."
 
-#: src/pinger.c:235
+#: src/pinger.c:252
 msgid "must be less than"
 msgstr "musi byæ mniejszy ni¿"
 
-#: src/pinger.c:239 src/pinger.c:243
+#: src/pinger.c:257 src/pinger.c:264
 msgid "must be greater than"
 msgstr "musi byæ wiêkszy ni¿"
 
-#: src/pinger.c:239 src/pinger.c:243
+#: src/pinger.c:259 src/pinger.c:265
 msgid "Someone doesn't know how to make changes in the source code!"
 msgstr "Nikt nie wie w jaki sposób dokonywaæ zmian w kodzie ¼ród³owym!"
 
-#: src/pinger.c:261
+#: src/pinger.c:284
 msgid "Pinger - version"
 msgstr "Pinger - wersja"
 
-#: src/pinger.c:262
+#: src/pinger.c:285
 msgid "Usage:"
 msgstr "Sposób u¿ycia:"
 
-#: src/pinger.c:264
+#: src/pinger.c:288
 msgid "Parameters:"
 msgstr "Parametry:"
 
-#: src/pinger.c:265
+#: src/pinger.c:290
 msgid "use GTK 2.x frontend (otherwise use ncurses)."
 msgstr "u¿yj interfejsu GTK 2.x (w przeciwnym przypadku u¿yj ncurses)."
 
-#: src/pinger.c:266
+#: src/pinger.c:292
 msgid "do not display messages into console."
 msgstr "nie wy¶wietla komunikatów w konsoli"
 
-#: src/pinger.c:284
+#: src/pinger.c:310
 msgid ""
 "Maximum configuration files count exceeded. All following files will be "
 "ignored"
@@ -591,22 +592,22 @@ msgstr ""
 "Przekroczono maksymaln± liczbê dozwolonych plików konfiguracyjnych. "
 "Wszystkie pozosta³e pliki zostan± zignorowane"
 
-#: src/pinger.c:294
+#: src/pinger.c:319
 msgid "Available modes:"
 msgstr "Dostêpne tryby:"
 
-#: src/pinger.c:301
+#: src/pinger.c:329
 msgid "Using mode:"
 msgstr "U¿ycie trybu:"
 
-#: src/pinger.c:305
+#: src/pinger.c:333
 msgid ""
 "GTK mode is not enabled, please recompile this program with enabling GTK "
 "mode."
 msgstr ""
 "Tryb GTK nie jest dostêpny. Proszê zrekompilowaæ program z obs³ug± trybu GTK."
 
-#: src/pinger.c:320
+#: src/pinger.c:351
 msgid ""
 "ncurses mode is not enabled, please recompile this program with enabling "
 "ncurses mode."
@@ -614,113 +615,113 @@ msgstr ""
 "Tryb ncurses nie jest dostêpny. Proszê zrekompilowaæ program z obs³ug± trybu "
 "ncurses."
 
-#: src/pinger.c:341
+#: src/pinger.c:376
 msgid "Cannot restore back root privileges, quiting."
 msgstr "Niemo¿liwe przywrócenie uprawnieñ roota - koñczê dzia³anie"
 
-#: src/pinger.c:348
+#: src/pinger.c:383
 msgid "No hosts loaded!"
 msgstr "Niemo¿liwe za³adowanie informacji o hostach!"
 
-#: src/pinger.c:355 src/pinger.c:360
+#: src/pinger.c:389 src/pinger.c:395
 msgid "ARP code"
 msgstr "Kod ARP"
 
-#: src/pinger.c:355
+#: src/pinger.c:390
 msgid "Cannot set root privileges, quitting."
 msgstr "Niemo¿liwe ustawienie uprawnieñ roota - koñczê dzia³anie"
 
-#: src/pinger.c:375
+#: src/pinger.c:412
 msgid "Cannot get rid of effective and saved uid."
 msgstr "Niemo¿liwe pozbycie siê efektywnego i zapisanego uid."
 
-#: src/pinger.c:376
+#: src/pinger.c:414
 msgid "Successfuly removed root privileges."
 msgstr "Pozbycie siê uprawnieñ roota zakoñczone pomy¶lnie."
 
-#: src/pinger.c:379
+#: src/pinger.c:419
 msgid "Cannot allocate icmp packet (bad icmp 'packetsize' perhaps?)."
 msgstr ""
 "Niemo¿liwe utworzenie pakietu ICMP (prawdopodobnie warto¶æ parametru "
 "'packetsize' jest niepoprawna?)."
 
-#: src/pinger.c:412 src/interface_gtk.c:451
+#: src/pinger.c:461 src/interface_gtk.c:492
 msgid "Parent is commiting suicide because its only child died unexpectedly."
 msgstr ""
 "Proces rodzicielski koñczy dzia³anie, poniewa¿ jego jedyny proces potomny "
 "niespodziewanie zakoñczy³ dzia³anie."
 
-#: src/timefunc.c:32
+#: src/timefunc.c:33
 msgid "Cannot get time of day."
 msgstr "Niemo¿liwe odczytanie aktualnej daty."
 
-#: src/interface_ncurses.c:210 src/interface_gtk.c:229
+#: src/interface_ncurses.c:222 src/interface_gtk.c:255
 msgid "a lot!"
 msgstr "du¿o!"
 
-#: src/interface_ncurses.c:260 src/interface_gtk.c:288
+#: src/interface_ncurses.c:284 src/interface_gtk.c:315
 msgid "NwUnrch"
 msgstr "SieæNiedos"
 
-#: src/interface_ncurses.c:264 src/interface_gtk.c:298
+#: src/interface_ncurses.c:290 src/interface_gtk.c:324
 msgid "Resolving"
 msgstr "Rozwi±zywanie."
 
-#: src/interface_ncurses.c:295 src/interface_gtk.c:80 src/interface_gtk.c:84
+#: src/interface_ncurses.c:324 src/interface_gtk.c:88 src/interface_gtk.c:96
 #, c-format
 msgid "'q' key to quit"
 msgstr "'q' klawisz powoduje wyj¶cie"
 
-#: src/interface_ncurses.c:330 src/interface_gtk.c:370
+#: src/interface_ncurses.c:360 src/interface_gtk.c:402
 msgid "Delay [ms]"
 msgstr "Opó¼nienie [ms]"
 
-#: src/interface_ncurses.c:331 src/interface_gtk.c:377
+#: src/interface_ncurses.c:361 src/interface_gtk.c:411
 msgid "IP"
 msgstr "IP"
 
-#: src/interface_ncurses.c:332 src/interface_gtk.c:385
+#: src/interface_ncurses.c:362 src/interface_gtk.c:421
 msgid "Status"
 msgstr "Stan"
 
-#: src/interface_ncurses.c:333 src/interface_gtk.c:392
+#: src/interface_ncurses.c:363 src/interface_gtk.c:430
 msgid "Snt/Rcv"
 msgstr "Wys/Otrz"
 
-#: src/interface_ncurses.c:334 src/interface_gtk.c:399
+#: src/interface_ncurses.c:364 src/interface_gtk.c:439
 msgid "Avail"
 msgstr "Dostêpny"
 
-#: src/interface_ncurses.c:335 src/interface_gtk.c:406
+#: src/interface_ncurses.c:366 src/interface_gtk.c:448
 msgid "Last OK"
 msgstr "Ostatni OK"
 
-#: src/interface_gtk.c:176
+#: src/interface_gtk.c:194
 msgid ""
 "Headers cannot be displayed due to bad conversion from locale to UTF8 in"
 msgstr ""
 "Nag³ówki nie mog± zostaæ wy¶wietlone w zwi±zku z niepoprawn± konwersj± "
 "kodowania lokalnego do UTF8 w"
 
-#: src/interface_gtk.c:217
+#: src/interface_gtk.c:239
 msgid "Cannot find model with number"
 msgstr "Niemo¿liwe powi±zanie modelu z numerem"
 
-#: src/interface_gtk.c:428
+#: src/interface_gtk.c:469
 msgid "Unsuccessful exit, canot release sockets."
 msgstr ""
 "Niepomy¶lne zakoñczenie programu - niemo¿liwe zwolnienie gniazd sieciowych."
 
-#: src/interface_gtk.c:430
+#: src/interface_gtk.c:471
 msgid "Thank you for use."
 msgstr "Dziêkujemy za u¿ycie naszego narzêdzia."
 
-#: src/interface_gtk.c:430
+#: src/interface_gtk.c:471
 msgid "Successful exit."
 msgstr "Pomy¶lne zakoñczenie."
 
-#: src/interface_gtk.c:464 src/interface_gtk.c:468 src/interface_gtk.c:470
-#: src/interface_gtk.c:471
+#: src/interface_gtk.c:505 src/interface_gtk.c:509 src/interface_gtk.c:512
+#: src/interface_gtk.c:514
 msgid "Actual time"
 msgstr "Aktualny czas"
 
@@ -740,23 +741,23 @@ msgstr ""
 msgid "Initializing log"
 msgstr "Incjalizowanie dziennika zdarzeñ"
 
-#: src/log.c:67
+#: src/log.c:68
 msgid "Cannot open log file"
 msgstr "Niemo¿liwe otworzenie pliku z dziennikiem zdarzeñ"
 
-#: src/log.c:70
+#: src/log.c:71
 msgid "File opened"
 msgstr "Otwarto plik"
 
-#: src/log.c:86
+#: src/log.c:91
 msgid "started."
 msgstr "uruchomiono"
 
-#: src/log.c:107
+#: src/log.c:113
 msgid "stopped"
 msgstr "zatrzymano"
 
-#: src/log.c:169
+#: src/log.c:182
 msgid "Error"
 msgstr "B³±d"
 

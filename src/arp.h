@@ -7,8 +7,7 @@ typedef unsigned long int in_addr_t;
 void get_ifaces(void);
 
 /* process arp reply */
-int recv_arp_reply(host_data *host_info);
+int recv_arp_reply(host_data * host_info);
 
 /* send ARP request to specified IP */
 int send_arp_req(int sock, in_addr_t ip);
-

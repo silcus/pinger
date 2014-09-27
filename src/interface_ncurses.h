@@ -30,12 +30,13 @@ extern WINDOW *main_win;
 #define LINE_UNDER_HEADER 2
 
 /* define color pairs id for ncurses */
-enum ncurses_color_pairs_id {
-  COL_NOCOLOR,
-  COL_ONLINE,
-  COL_OFFLINE,
-  COL_NWUNREACH,
-  COL_DELAYED
+enum ncurses_color_pairs_id
+{
+    COL_NOCOLOR,
+    COL_ONLINE,
+    COL_OFFLINE,
+    COL_NWUNREACH,
+    COL_DELAYED
 };
 
 /* color for ncurses */
@@ -48,21 +49,24 @@ enum ncurses_color_pairs_id {
 #define HDR_LINE_X_START 2
 
 /* init interface */
-void ncurses_interface_init(int *argc, char **argv[], char *title, hosts_data *hosts);
+void ncurses_interface_init(int *argc, char **argv[], char *title,
+                            hosts_data * hosts);
 
 /* interface done */
 void ncurses_interface_done(char *error_str);
 
-void count_line_pos(void **curseswin, int *host_pos, int *delay_pos, int *name_pos, int *stat_pos, int *sr_pos, int *avail_pos, int *lastok_pos);
+void count_line_pos(void **curseswin, int *host_pos, int *delay_pos,
+                    int *name_pos, int *stat_pos, int *sr_pos, int *avail_pos,
+                    int *lastok_pos);
 
 /* ncurses show single host status */
-void show_host_status(host_data * host, int colpair, int attr, char *statstr, char *delaystr, char *srstr,
-    char *availstr, char *lastokstr, int host_set_nr);
+void show_host_status(host_data * host, int colpair, int attr, char *statstr,
+                      char *delaystr, char *srstr, char *availstr,
+                      char *lastokstr, int host_set_nr);
 
 /* get single host status and display it */
 int ncurses_show_status(host_data * host);
 
 void print_header(char *title);
 
-void ncurses_gui_loop(hosts_data *hosts, int *stop_loop);
-
+void ncurses_gui_loop(hosts_data * hosts, int *stop_loop);

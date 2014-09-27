@@ -30,20 +30,20 @@
 #define ETHER_H
 #if __GLIBC__ >= 2 && __GLIBC_MINOR >= 1
 #include <netpacket/packet.h>
-#include <net/ethernet.h>     /* the L2 protocols */
+#include <net/ethernet.h>       /* the L2 protocols */
 #else
 #include <asm/types.h>
 #include <linux/if_packet.h>
-#include <linux/if_ether.h>   /* The L2 protocols */
+#include <linux/if_ether.h>     /* The L2 protocols */
 #endif
 #endif
 #endif
 
 /* how many characters (plus term. char.) can byte have (in string form) */
 #define BYTE_STR_LEN 4
-#define CFG_FILENAME ".pingerrc" /* may be overriden by cfg_filename variable */
-#define MAX_CFGLINE_LEN 100 /* this is maximum length of each cfg line which will be used */
-#define LONG_CFGLINE_LEN 500 /* here will be each line read first to decide what length it actually has */
+#define CFG_FILENAME ".pingerrc"    /* may be overriden by cfg_filename variable */
+#define MAX_CFGLINE_LEN 100     /* this is maximum length of each cfg line which will be used */
+#define LONG_CFGLINE_LEN 500    /* here will be each line read first to decide what length it actually has */
 
 /* maximum value of any option */
 #define MAX_OPT_VALUE 65535
@@ -51,7 +51,7 @@
 #define STD_TITLE "standard set"
 /* maximum allowed title length */
 #define MAX_TITLE_LEN 20
-#define MIN_TITLE_LEN 2 /* at least two digits */
+#define MIN_TITLE_LEN 2         /* at least two digits */
 #define MAX_TABS 20
 
 
@@ -63,12 +63,11 @@ int parse_line(char *line, char *name, char *value);
 int check_byte(char *byte);
 
 /* Check if valid option value */
-int valid_opt_value(char * value);
+int valid_opt_value(char *value);
 
 /* Check if IP ("XXX.XXX.XXX.XXX" in string form) is real IPv4 IP address */
 int valid_ip(char *ip);
 
 /* Read config file and fill up host structure with these data.
  * Also open raw sockets for the hosts. */
-void read_config_file (hosts_data *hosts, filelist *cfg_filenames);
-
+void read_config_file(hosts_data * hosts, filelist * cfg_filenames);

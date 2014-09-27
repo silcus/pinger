@@ -1,6 +1,6 @@
 /*
     pinger -- GTK+/ncurses multi-ping utility
-    Copyright (C) 2002-2006 Petr Koloros
+    Copyright (C) 2002-2014 Petr Koloros
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,11 +28,10 @@
 /* By default a-z,A-Z is allowed in domain name. These specifies extra
  * characters which are allowed */
 #ifdef DNS_LOCAL
-char dns_allowed_chars[2] = {'-', '.'};
+char dns_allowed_chars[2] = { '-', '.' };
 #else
 extern char *dns_allowed_chars;
 #endif
 
 /* This loop resolves domain names periodicaly */
 void *resolve_loop(void *data);
-

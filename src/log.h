@@ -1,6 +1,6 @@
 /*
     pinger -- GTK+/ncurses multi-ping utility
-    Copyright (C) 2006 Petr Koloros
+    Copyright (C) 2006-2014 Petr Koloros
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,28 +22,31 @@
 #include <unistd.h>
 #include <time.h>
 
-#define LOG_STATUS_LAST -1 /* log host status change if it lasts at least this long in seconds.
-                              0 means log every change and ingnore duration of the status.
-                              -1 = disable host status logging. */
+#define LOG_STATUS_LAST -1      /* log host status change if it lasts at least this long in seconds.
+                                   0 means log every change and ingnore duration of the status.
+                                   -1 = disable host status logging. */
 #define MIN_STATUS_LAST -1
 #define MAX_STATUS_LAST 84000
 #define DEFAULT_STATUS_LAST 0
 
-typedef struct log_struct{
-  FILE *file;
-  char *log_name;
-  int host_set;
-  struct log_struct *next;
+typedef struct log_struct
+{
+    FILE *file;
+    char *log_name;
+    int host_set;
+    struct log_struct *next;
 } log_struct_t;
 
-typedef struct logs_struct {
-  log_struct_t *log;
-  int type;
+typedef struct logs_struct
+{
+    log_struct_t *log;
+    int type;
 } logs_t;
 
-enum log_types {
-  ERR_LOG,
-  HOST_LOG
+enum log_types
+{
+    ERR_LOG,
+    HOST_LOG
 };
 
 #ifndef LOG_LOCAL
@@ -52,10 +55,11 @@ extern logs_t *host_log;
 #endif
 
 /* Error status codes when initializing log. LOG_OK is first one with code 0 */
-enum log_errors {
-  LOG_OK,
-  LOG_BAD_FILE,
-  LOG_SET_EXISTS
+enum log_errors
+{
+    LOG_OK,
+    LOG_BAD_FILE,
+    LOG_SET_EXISTS
 };
 
 #define LOG_DEFAULT -2
@@ -63,16 +67,16 @@ enum log_errors {
 #define LOG_ENABLED 0
 
 /* Init log inside logs. If logs struct is not initalized, do initialize it. */
-int init_log(logs_t *logs, char *log_file_name, char *log_name, int host_set);
+int init_log(logs_t * logs, char *log_file_name, char *log_name, int host_set);
 
 /* Return meaning of the log error as string */
 char *log_error_str(int error);
 
 /* Close specified logs */
-int close_logs(logs_t *logs);
+int close_logs(logs_t * logs);
 
 /* Close specified log from logs */
-int close_log(logs_t *logs, log_struct_t *log);
+int close_log(logs_t * logs, log_struct_t * log);
 
 /* Close all logs, which are defined inside log.c file */
 void close_built_in_logs();
@@ -82,5 +86,5 @@ void init_built_in_logs();
 
 /* Log event into specified log file. Some are defined inside parse.c source as
  * global. */
-int log_event(struct timeval *logtime, logs_t *logs, int host_set, char *event, ...);
-
+int log_event(struct timeval *logtime, logs_t * logs, int host_set, char *event,
+              ...);
