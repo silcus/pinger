@@ -1,5 +1,14 @@
+commit d9eafdb1fd7cf9e214475575f78f50bcb32f5d12
+Author: Petr Koloros <silk@seznam.cz>
+Date:   Sat Sep 27 12:19:30 2014 +0200
+
+    * Changed indentation of all files
+    * Updated headers
+    
+    No functional impact, only administration stuff
+
 commit ca1193999a0520b3d76cf26675e8a0567eecf33b
-Author: Petr Koloros 
+Author: Petr Koloros <silk@seznam.cz>
 Date:   Sat Sep 27 10:45:00 2014 +0200
 
     * unify gtk modes into one, shared by gtk2/gtk3
@@ -8,25 +17,25 @@ Date:   Sat Sep 27 10:45:00 2014 +0200
     once and the GTK design is (still) the same.
 
 commit 74d6d5ab26e439c300536259543b77df1f366b77
-Author: Petr Koloros 
+Author: Petr Koloros <silk@seznam.cz>
 Date:   Sat Sep 27 00:48:57 2014 +0200
 
     * added GTK+ 3 support
 
 commit 72802602edf66df4e96cb9d497b82a23e231f7f7
-Author: Petr Koloros 
+Author: Petr Koloros <silk@seznam.cz>
 Date:   Sun Jul 27 11:22:14 2014 +0200
 
     * fixed stack overflow in rcv/sent string, thanks for spotting go to Kyrylo Shpytsya
 
 commit 5530852cd0a7c16acb44bf4be95d7af8dfb57662
-Author: Petr Koloros 
+Author: Petr Koloros <silk@sinus.cz>
 Date:   Sun Feb 9 15:04:59 2014 +0100
 
     * fixed compilation issue on systems without GTK (reported by Jeroen Roovers/Gentoo)
 
 commit 0661f8fd8d168a9d88447a3a4564b9f46a5412cb
-Author: Petr Koloros 
+Author: Petr Koloros <silk@sinus.cz>
 Date:   Sat Aug 10 22:19:59 2013 +0200
 
     * import pinger 0.32e from svn

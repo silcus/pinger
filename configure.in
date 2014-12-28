@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(src/pinger.c)
-AM_INIT_AUTOMAKE(pinger, 0.33)
+AM_INIT_AUTOMAKE(pinger, 0.33b-snapshot-141226)
 AM_CONFIG_HEADER(config.h)
 
 dnl Checks for programs.
@@ -54,13 +54,16 @@ AC_TYPE_SIZE_T
 AC_HEADER_TIME
 AM_INADDRT
 
+dnl DEBUG
+AC_ARG_ENABLE([debug], AS_HELP_STRING([--enable-debug], [Build with debugging print-outs]), CFLAGS="$CFLAGS -DDEBUG")
+
 dnl GTK3/GTK2 tests
 dnl Note: PKG_CHECK_MODULES cannot be used conditionaly due to sharing the tests and depending on it
 AC_ARG_ENABLE([gtk], AS_HELP_STRING([--enable-gtk[[[=version]]]], [Build with GTK+ interface. Supported versions are gtk2 and gtk3. Default is gtk2.]))
 PKG_CHECK_MODULES(GTK, [ gtk+-2.0 >= 2.4 ], HAVE_GTK_2=1; )
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
-PKG_CHECK_MODULES(GTK3, [ gtk+-3.0 >= 3.12 ], HAVE_GTK_3=1)
+PKG_CHECK_MODULES(GTK3, [ gtk+-3.0 >= 3.10 ], HAVE_GTK_3=1)
 AC_SUBST(GTK3_CFLAGS)
 AC_SUBST(GTK3_LIBS)
 
@@ -75,7 +78,7 @@ LIBS="$LIBS $GTK3_LIBS"
 HAVE_GTK_2=0
 AC_DEFINE(HAVE_GTK_3, 1, Found GTK+ 3.x support)
 else
-echo "Sorry, the value $enableval is not supported as argument of --enable-gtk."
+echo "Sorry, the value $enableval is not supported as argument of --enable-gtk. Supported values are gtk2 or gtk3."
 exit 1
 fi
 
@@ -102,6 +105,9 @@ fi
 
 echo ""
 echo "Available modes (note GTK2 and GTK3 can't be compiled at the same time):"
+if test "x$HAVE_GTK_2" = "x1" || test "x$HAVE_GTK_3" = "x1"; then
+echo "(note: use --enable-gtk=[gtk2|gtk3] to select the mode you want)"
+fi
 if test "x$HAVE_GTK_2" = "x1"; then
 	echo -e "  GTK 2.x:\tYES";
 else
