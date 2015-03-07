@@ -54,7 +54,7 @@
 
 #define AUTHOR_STR "Petr Koloros, silk[a t]seznam[d o t]cz"
 
-//#define DEBUG
+#undef DEBUG
 
 /* guiloop checks this periodicaly */
 int stop_gui_loop = 0;
