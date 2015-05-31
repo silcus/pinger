@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <sys/time.h>
+#include <sys/types.h>
 
 #include "../config.h"
 #include "fake_gtk.h"
@@ -62,9 +63,6 @@
 #define EXTERN extern
 #endif
 
-#ifndef __USE_MISC
-#define unsigned int uint;
-#endif
 
 #define MAX_HOSTS 100
 /* Maximum size of domain name */
