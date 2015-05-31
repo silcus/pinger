@@ -1,5 +1,25 @@
+commit 801c91da30d3644c5e83e63423e2b8655bd94465
+Author: Petr Koloros 
+Date:   Sun May 31 22:52:20 2015 +0200
+
+    * Fixed compilation with musl libc (thanks go to Fredric Johansson)
+
+commit 7e41b8c998307bebe23eed6f28199c9fed7ac44d
+Author: Petr Koloros 
+Date:   Sat Mar 7 08:21:39 2015 +0100
+
+    * Removed debug message in the ncurses mode
+
+commit 3f88652f26f8a1fae9797594aa9f71699d378e4c
+Author: Petr Koloros 
+Date:   Sun Dec 28 15:43:05 2014 +0100
+
+    * Try older version of GTK (Debian 7)
+    * Be more verbose about the gtk options
+    * Allow debugging via configure argument
+
 commit d9eafdb1fd7cf9e214475575f78f50bcb32f5d12
-Author: Petr Koloros <silk@seznam.cz>
+Author: Petr Koloros 
 Date:   Sat Sep 27 12:19:30 2014 +0200
 
     * Changed indentation of all files
@@ -8,7 +28,7 @@ Date:   Sat Sep 27 12:19:30 2014 +0200
     No functional impact, only administration stuff
 
 commit ca1193999a0520b3d76cf26675e8a0567eecf33b
-Author: Petr Koloros <silk@seznam.cz>
+Author: Petr Koloros 
 Date:   Sat Sep 27 10:45:00 2014 +0200
 
     * unify gtk modes into one, shared by gtk2/gtk3
@@ -17,25 +37,25 @@ Date:   Sat Sep 27 10:45:00 2014 +0200
     once and the GTK design is (still) the same.
 
 commit 74d6d5ab26e439c300536259543b77df1f366b77
-Author: Petr Koloros <silk@seznam.cz>
+Author: Petr Koloros 
 Date:   Sat Sep 27 00:48:57 2014 +0200
 
     * added GTK+ 3 support
 
 commit 72802602edf66df4e96cb9d497b82a23e231f7f7
-Author: Petr Koloros <silk@seznam.cz>
+Author: Petr Koloros 
 Date:   Sun Jul 27 11:22:14 2014 +0200
 
     * fixed stack overflow in rcv/sent string, thanks for spotting go to Kyrylo Shpytsya
 
 commit 5530852cd0a7c16acb44bf4be95d7af8dfb57662
-Author: Petr Koloros <silk@sinus.cz>
+Author: Petr Koloros 
 Date:   Sun Feb 9 15:04:59 2014 +0100
 
     * fixed compilation issue on systems without GTK (reported by Jeroen Roovers/Gentoo)
 
 commit 0661f8fd8d168a9d88447a3a4564b9f46a5412cb
-Author: Petr Koloros <silk@sinus.cz>
+Author: Petr Koloros 
 Date:   Sat Aug 10 22:19:59 2013 +0200
 
     * import pinger 0.32e from svn
