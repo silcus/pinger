@@ -39,7 +39,7 @@ int get_curr_set_nr()
  * by 'max_chars', put '~' at the beginning and strip it so, only
  * the ending characters are written into 'c'. Return number of written
  * characters */
-static nr_print_ull(char *c, int max_chars, unsigned long long l)
+static int nr_print_ull(char *c, int max_chars, unsigned long long l)
 {
     char line[200], *p = line;
     int n;

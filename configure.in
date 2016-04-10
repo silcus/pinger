@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(src/pinger.c)
-AM_INIT_AUTOMAKE(pinger, 0.33b-snapshot-150531)
+AM_INIT_AUTOMAKE(pinger, 0.33b-snapshot-160410)
 AM_CONFIG_HEADER(config.h)
 
 dnl Checks for programs.
@@ -83,8 +83,13 @@ exit 1
 fi
 
 dnl Check for additional external libraries etc..
+AC_CHECK_LIB(ncursesw, initscr, HAVE_CURSES=1; LIBS="$LIBS -lncursesw";
+	AC_DEFINE([HAVE_LIBNCURSES], [1], found ncursesw library))
+if test -z "$HAVE_CURSES"; then
 AC_CHECK_LIB(ncurses, initscr, HAVE_CURSES=1; LIBS="$LIBS -lncurses";
 	AC_DEFINE([HAVE_LIBNCURSES], [1], found ncurses library))
+fi
+
 AC_CHECK_LIB(intl, libintl_gettext, LIBS="$LIBS -lintl")
 AC_CHECK_LIB(pthread, pthread_create, LIBS="$LIBS -lpthread", AC_MSG_ERROR(Pthread required and not found. Please check if you have libpthread in your system and specify using CFLAGS and LDFLAGS when configure))
 
@@ -92,7 +97,7 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(gettimeofday inet_ntoa memset socket strchr strerror setresuid, ,
 	AC_MSG_ERROR(Cannot find all required library functions))
 
-AM_CONDITIONAL([HAVE_CURSES], [test x$HAVE_CURSES = x1])
+AM_CONDITIONAL([HAVE_CURSES], [test ! -z "$HAVE_CURSES"])
 AM_CONDITIONAL([HAVE_GTK_2], [test x$HAVE_GTK_2 = x1])
 AM_CONDITIONAL([HAVE_GTK_3], [test x$HAVE_GTK_3 = x1])
 
