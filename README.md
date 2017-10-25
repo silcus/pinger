@@ -1,11 +1,10 @@
-PINGER - GTK+/ncurses multi-ping utility
+# PINGER - GTK+/ncurses multi-ping utility
 Copyright (C) 2002-2017 Petr Koloros <[namesurname]@gmail.com>
 See AUTHORS for more.
 
 This program GPL'ed. See COPYING for more details.
 
-What is pinger
---------------
+## What is pinger
 
 Imagine a situation when you want to see if other machines are running (very
 often in you neighborhood or subnet). Pinger allows you to see status of many
@@ -13,50 +12,43 @@ hosts at once with their response times using standard ICMP messages or ARP
 requests. You can easily get informations about network congestion or dead
 parts.
 
-Requirements
-------------
+## Requirements
 
 One of these (if both are available, it's cool):
-  GTK+ 2.x and better
-      - http://www.gtk.org
-  Ncurses (tested with version 5.0 and higher)
-      - http://www.gnu.org/software/ncurses
+- GTK+ 2.x and better
+  - http://www.gtk.org
+-  Ncurses (tested with version 5.0 and higher)
+  - http://www.gnu.org/software/ncurses
 
 Since version 0.3 pinger is more modular (and readable :-)) so you can add your
 favorite interface if you are encouraged code writer.
       
-Installation
-------------
+## Installation
 
-./configure
-make
-make install
+> ./configure
+> make
+> make install
 
 It needs to be a 'suid' application, so `make install` as root. It should
 make 'suid' executable by itself.
 
-Default font is font you have set as default for gtk applications. If you want to
-change it, uncomment this line 
+Default font is font you have set as default for gtk applications. If you want to change it, uncomment this line 
 
-//#define USE_FONT_FAMILY
+> //#define USE_FONT_FAMILY
 
 in file <top directory>/src/pinger.c and set the font family in the line
 below if you want.
 
-Debian package
---------------
+## Debian package
 
 Since version 0.32 pinger distribution is capable of creating the debian
 package. There are two steps needed:
 
 1. Configure pinger for debian directory structure, i486 and with stripping
 debug info:
-
-LDFLAGS="-s" CFLAGS="-O2 -march=i486" ./configure --prefix=/usr
-
+> LDFLAGS="-s" CFLAGS="-O2 -march=i486" ./configure --prefix=/usr
 2. Create debian package by typing this (under root of course):
-
-make deb
+> make deb
 
 It should produce package like pinger_0.32-1_i386.deb. It is very basic
 package. I don't use Debian/Ubuntu/*deb* on my laptop, so if you encounter any
@@ -66,18 +58,16 @@ Note: if you like some other destination you want pinger to stay, use
 --prefix=myfavoritedirectory. Documentation will be placed automatically in the
 /usr/share/doc/pinger-version directory.
 
-Usage
------
+## Usage
 
 Currently pinger has two modes:
 
-pinger - starts pinger in text console using ncurses interface.
-gtkpinger - (or pinger --gtk) use gtk as graphical interface
+- pinger - starts pinger in text console using ncurses interface.
+- gtkpinger - (or pinger --gtk) use gtk as graphical interface
 
 Both version are equally featured. Quit is done by pressing of any key.
 
-Configuration
--------------
+## Configuration
 
 Pinger uses configuration file which is by default stored in your home
 directory. If you don't have any and want the pinger to create some for you,
@@ -105,8 +95,7 @@ of range which pinger considers as sane) and then it will tell you and set the
 default value. You can use error log file to log the errors which pinger
 encounters. See chapter Logging.
 
-Upgrade
--------
+## Upgrade
 
 When upgrading from previous version, your configuration file should work as
 before. But new versions also may bring some new options you can use. If you
@@ -115,8 +104,7 @@ pinger so it can't find it in your home directory. It creates a new one where
 you can check new options inside. Then you can restore your previous
 configuration file and add options found in new one.
 
-80 characters terminal
----------------------
+## 80 characters terminal
 
 There is not enough space to display all featured column. I call these bonus
 columns and they are displayed only in wider terminals or in graphics mode
@@ -125,22 +113,12 @@ columns and they are displayed only in wider terminals or in graphics mode
 Currently there is only "Last OK" column considered as bonus column. It shows
 timestamp of last successful ping for each destination.
 
-Timing
-------
+## Timing
 
 There are customizable times which set host status. There are described in the
-configuration file. Briefly: host_timeout_ms - if there is no answer in that time,
-host is considered offline and new request is send to the host. If pings are
-successful, delay_between_pings_ms is used to wait before sending another request
-to this host. long_delay_ms means that host responded in time, but this response is
-quite delayed (says something like warning, connection to this host is really slow).
-Refresh_interval_ms otherwise means how often should be the user interface updated.
-If you set this for example to 5000ms, you are going to see the results every 5
-seconds. Meanwhile results are frozen while pinger is doing pinging in the
-background.
+configuration file. Briefly: host_timeout_ms - if there is no answer in that time, host is considered offline and new request is send to the host. If pings are successful, delay_between_pings_ms is used to wait before sending another request to this host. long_delay_ms means that host responded in time, but this response is quite delayed (says something like warning, connection to this host is really slow).  Refresh_interval_ms otherwise means how often should be the user interface updated.  If you set this for example to 5000ms, you are going to see the results every 5 seconds. Meanwhile results are frozen while pinger is doing pinging in the background.
 
-Domain names resolving
-----------------------
+# Domain names resolving
 
 Since version 0.31 pinger resolves names specified using domain name format
 (put it in the configuration file instead of IP). It resolves all those names
@@ -148,8 +126,7 @@ periodically with interval 10 minutes or whatever you specify in configuration
 file (dns_check_s option). If name has no resolve result but has been resolved
 before, the previous value is kept.
 
-ARP pinging
------------
+# ARP pinging
 
 Some hosts may not respond to the ICMP requests (classic ping mechanism). On
 the local network there may be better sometimes to use ARP instead of ICMP
@@ -158,8 +135,7 @@ ARP cannot be easily blocked from the client. The use of ARP must be specified
 in the configuration file for each host. (Put the "arp" after host name like
 this: IP/domain=name,arp[,params])
 
-Logging
--------
+# Logging
 
 Pinger supports two types of logging - error log and host log. Error log can be
 used for error messages. If not specified, error messages are printed on
