@@ -17,7 +17,7 @@ parts.
 One of these (if both are available, it's cool):
 - GTK+ 2.x and better
   - http://www.gtk.org
--  Ncurses (tested with version 5.0 and higher)
+- Ncurses (tested with version 5.0 and higher)
   - http://www.gnu.org/software/ncurses
 
 Since version 0.3 pinger is more modular (and readable :-)) so you can add your
@@ -116,7 +116,12 @@ timestamp of last successful ping for each destination.
 ## Timing
 
 There are customizable times which set host status. There are described in the
-configuration file. Briefly: host_timeout_ms - if there is no answer in that time, host is considered offline and new request is send to the host. If pings are successful, delay_between_pings_ms is used to wait before sending another request to this host. long_delay_ms means that host responded in time, but this response is quite delayed (says something like warning, connection to this host is really slow).  Refresh_interval_ms otherwise means how often should be the user interface updated.  If you set this for example to 5000ms, you are going to see the results every 5 seconds. Meanwhile results are frozen while pinger is doing pinging in the background.
+configuration file.
+Briefly:
+- host_timeout_ms - if there is no answer in that time, host is considered offline and new request is send to the host. If pings are successful
+- delay_between_pings_ms is used to wait before sending another request to this host
+- long_delay_ms means that host responded in time, but this response is quite delayed (says something like warning, connection to this host is really slow)
+- refresh_interval_ms otherwise means how often should be the user interface updated. If you set this for example to 5000ms, you are going to see the results every 5 seconds. Meanwhile results are frozen while pinger is doing pinging in the background.
 
 # Domain names resolving
 
@@ -137,19 +142,14 @@ this: IP/domain=name,arp[,params])
 
 # Logging
 
-Pinger supports two types of logging - error log and host log. Error log can be
-used for error messages. If not specified, error messages are printed on
+Pinger supports two types of logging - error log and host log.
+
+Error log can be used for error messages. If not specified, error messages are printed on
 standard error output in terminal (you can redirect it by adding " 2> file" in
-the command line when executing pinger. Host log is for host changes. With the
-global parameter log_if_status_lasts_s you can set how long must status of the
-host lasts in order to be logged into file. It helps to log only important
-status changes and ignore the minor ones. If you don't specify log files (using
-parameters error_log or host_log), logging will be ignored. Pinger tries to
-guess the best logging alternative. If you specify some hosts to log and the
-rest are unspecified, it will not log them. If you specify some hosts to not
-log, the rest will be logged. If you specify to log some host and to not log
-some other hosts, default value (log_if_status_last_s) will be used for the
-rest (if it is set to -1, it means to not log. Otherwise they will be logged).
-If you don't specify log_if_status_last_s parameter, default value is 0, which
-means to log every change.
+the command line when executing pinger.
+
+Host log is for host changes. With the global parameter log_if_status_lasts_s you can set how long must status of the
+host lasts in order to be logged into file.
+
+It helps to log only important status changes and ignore the minor ones. If you don't specify log files (using parameters error_log or host_log), logging will be ignored. Pinger tries to guess the best logging alternative. If you specify some hosts to log and the rest are unspecified, it will not log them. If you specify some hosts to not log, the rest will be logged. If you specify to log some host and to not log some other hosts, default value (log_if_status_last_s) will be used for the rest (if it is set to -1, it means to not log. Otherwise they will be logged). If you don't specify log_if_status_last_s parameter, default value is 0, which means to log every change.
 
